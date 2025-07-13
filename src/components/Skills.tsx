@@ -4,12 +4,13 @@ const Skills = () => {
   const skills = [
     { name: "HTML", level: 95 },
     { name: "CSS", level: 85 },
+    { name: "JavaScript", level: 80 },
     { name: "Bootstrap", level: 90 },
     { name: "Tailwind CSS", level: 92 },
     { name: "React", level: 76 },
-    { name: "TypeScript", level: 90 },
+    { name: "TypeScript", level: 60 },
     { name: "Node.js", level: 85 },
-    { name: "Express.js", level: 88 },
+    { name: "Express.js", level: 80 },
     { name: "MongoDB", level: 80 },
     { name: "AWS", level: 75 },
     { name: "Firebase", level: 80 },
@@ -58,6 +59,26 @@ const Skills = () => {
               fontWeight="bold"
             >
               CSS
+            </text>
+          </svg>
+        );
+      case "JavaScript":
+        return (
+          <svg
+            className="w-5 h-5 mr-2 md:w-12 md:h-12 text-blue-500"
+            viewBox="0 0 40 40"
+            fill="none"
+          >
+            <rect width="40" height="40" rx="8" fill="currentColor" />
+            <text
+              x="10"
+              y="28"
+              fontSize="14"
+              fill="#fff"
+              fontFamily="Arial"
+              fontWeight="bold"
+            >
+              JavaScript
             </text>
           </svg>
         );
@@ -177,30 +198,6 @@ const Skills = () => {
             />
           </svg>
         );
-      case "Java":
-        return (
-          <svg
-            className="w-5 h-5 mr-2 md:w-12 md:h-12 text-red-500"
-            viewBox="0 0 40 40"
-            fill="none"
-          >
-            <rect width="40" height="40" rx="8" fill="currentColor" />
-            <path
-              d="M20 28c4-2 6-4 6-8s-2-6-6-8-6 2-6 8 2 6 6 8z"
-              fill="#fff"
-            />
-            <text
-              x="14"
-              y="24"
-              fontSize="10"
-              fill="#fff"
-              fontFamily="Arial"
-              fontWeight="bold"
-            >
-              Java
-            </text>
-          </svg>
-        );
       case "MongoDB":
         return (
           <svg
@@ -258,7 +255,6 @@ const Skills = () => {
             </g>
           </svg>
         );
-
       case "Bootstrap":
         return (
           <svg
@@ -360,16 +356,202 @@ const Skills = () => {
 
   return (
     <div className="container mx-auto">
-    <div className="min-h-screen flex items-center justify-center p-2 sm:p-3 md:p-6 lg:p-8 bg-white ">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-xl sm:text-3xl md:text-4xl  mt-10 md:mt-16 lg:text-5xl xl:text-6xl font-light text-center mb-4 sm:mb-8 md:mb-12 lg:mb-16 transform hover:scale-105 transition-all duration-500">
-          My Skills
-        </h1>
-        <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
-          Frontend
-        </h2>
-        <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
-          <div className="space-y-4">
+      <div className="min-h-screen flex items-center justify-center p-2 sm:p-3 md:p-6 lg:p-8 bg-white ">
+        <div className="max-w-4xl w-full">
+          <h1 className="text-xl sm:text-3xl md:text-4xl  mt-10 md:mt-16 lg:text-5xl xl:text-6xl font-light text-center mb-4 sm:mb-8 md:mb-12 lg:mb-16 transform hover:scale-105 transition-all duration-500">
+            My Skills
+          </h1>
+          <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
+            Frontend
+          </h2>
+          <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
+            <div className="space-y-4">
+              {skills
+                .filter((skill) =>
+                  [
+                    "React",
+                    "TypeScript",
+                    "HTML",
+                    "CSS",
+                    "Bootstrap",
+                    "Tailwind CSS",
+                    "PHP",
+                    "JavaScript",
+                  ].includes(skill.name)
+                )
+                .map((skill, index) => {
+                  let icon = getSkillIcon(skill.name);
+                  if (skill.name === "HTML") {
+                    icon = (
+                      <svg
+                        className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                      >
+                        <path
+                          fill="#E65100"
+                          d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"
+                        ></path>
+                        <path
+                          fill="#FF6D00"
+                          d="M24 8L24 39.9 35.2 36.7 37.7 8z"
+                        ></path>
+                        <path
+                          fill="#FFF"
+                          d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"
+                        ></path>
+                        <path
+                          fill="#EEE"
+                          d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"
+                        ></path>
+                      </svg>
+                    );
+                  } else if (skill.name === "CSS") {
+                    icon = (
+                      <svg
+                        className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                      >
+                        <path
+                          fill="#0277BD"
+                          d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"
+                        ></path>
+                        <path
+                          fill="#039BE5"
+                          d="M24 8L24 39.9 35.2 36.7 37.7 8z"
+                        ></path>
+                        <path
+                          fill="#FFF"
+                          d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"
+                        ></path>
+                        <path
+                          fill="#EEE"
+                          d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"
+                        ></path>
+                      </svg>
+                    );
+                  } else if (skill.name === "JavaScript") {
+                    icon = (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                       className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                        viewBox="0 0 48 48"
+                      >
+                        <path fill="#ffd600" d="M6,42V6h36v36H6z"></path>
+                        <path
+                          fill="#000001"
+                          d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"
+                        ></path>
+                      </svg>
+                    );
+                  } else if (skill.name === "Bootstrap") {
+                    icon = (
+                      <svg
+                        className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        style={{
+                          minWidth: "1.25rem",
+                          minHeight: "1.25rem",
+                          maxWidth: "1.25rem",
+                          maxHeight: "1.25rem",
+                          width: "100%",
+                          height: "auto",
+                        }}
+                      >
+                        <defs>
+                          <linearGradient
+                            id="bootstrap-gradient-responsive"
+                            x1="24"
+                            x2="24"
+                            y1="41"
+                            y2="7"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop offset="0" stopColor="#643499" />
+                            <stop offset=".011" stopColor="#68369f" />
+                            <stop offset=".135" stopColor="#773db6" />
+                            <stop offset=".193" stopColor="#8042c3" />
+                            <stop offset=".248" stopColor="#8343c8" />
+                            <stop offset=".388" stopColor="#8444c9" />
+                            <stop offset=".732" stopColor="#9751d2" />
+                            <stop offset=".997" stopColor="#9c55d4" />
+                            <stop offset="1" stopColor="#9c55d4" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          fill="url(#bootstrap-gradient-responsive)"
+                          d="M7.373,11.443C7.293,9.132,9.094,7,11.529,7h24.946c2.435,0,4.236,2.132,4.155,4.443	c-0.077,2.221,0.023,5.097,0.747,7.443c0.681,2.207,1.801,3.652,3.593,3.981c0.206,0.038,0.363,0.205,0.363,0.415v1.438	c0,0.21-0.157,0.377-0.363,0.415c-1.792,0.328-2.912,1.773-3.593,3.981c-0.724,2.345-0.824,5.222-0.747,7.443	C40.71,38.868,38.909,41,36.475,41H11.529c-2.434,0-4.236-2.132-4.155-4.443c0.077-2.221-0.023-5.097-0.747-7.443	c-0.681-2.207-1.804-3.652-3.596-3.981c-0.206-0.038-0.363-0.205-0.363-0.415v-1.438c0-0.21,0.157-0.377,0.363-0.415	c1.792-0.328,2.915-1.773,3.596-3.981C7.35,16.54,7.451,13.664,7.373,11.443z"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M27.073,23.464v-0.028c1.853-0.32,3.299-2.057,3.299-3.97c0-1.352-0.52-2.498-1.504-3.312	c-0.981-0.812-2.357-1.241-3.981-1.241H17.45V33.08h7.475c1.942,0,3.555-0.474 4.663-1.372c1.109-0.899,1.696-2.207,1.696-3.783	C31.283,25.544,29.593,23.756,27.073,23.464z M23.59,22.608h-3.181V17.29h3.784c2.076,0,3.219,0.911,3.219,2.565	C27.413,21.63,26.055,22.608,23.59,22.608z M20.409,24.834h3.759c2.716,0,4.092,0.981,4.092,2.916c0,1.932-1.357,2.953-3.925,2.953\th-3.926V24.834z"
+                        />
+                      </svg>
+                    );
+                  } else if (skill.name === "TypeScript") {
+                    icon = (
+                      <svg
+                        className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="#00acc1"
+                          d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"
+                        />
+                      </svg>
+                    );
+                  } else if (skill.name === "PHP") {
+                    icon = (
+                      <img
+                        src="/php-6.svg"
+                        alt="PHP"
+                        className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                        style={{
+                          background: "white",
+                          borderRadius: "4px",
+                          minWidth: "1.25rem",
+                          minHeight: "1.25rem",
+                          maxWidth: "3rem",
+                          maxHeight: "3rem",
+                          width: "100%",
+                          height: "auto",
+                        }}
+                      />
+                    );
+                  }
+                  return (
+                    <div
+                      key={skill.name}
+                      className="bg-gray-50 rounded-lg shadow p-3 flex flex-col items-start"
+                    >
+                      <div className="flex justify-between items-center w-full mb-1">
+                        <span className="flex items-center text-sm font-medium text-gray-700">
+                          {icon}
+                          {skill.name}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${skill.level}%`,
+                            animation: `expand-frontend-${index} 1.5s ease-out forwards`,
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
             {skills
               .filter((skill) =>
                 [
@@ -379,7 +561,7 @@ const Skills = () => {
                   "CSS",
                   "Bootstrap",
                   "Tailwind CSS",
-                  "PHP",
+                  "PHP","JavaScript",
                 ].includes(skill.name)
               )
               .map((skill, index) => {
@@ -387,7 +569,7 @@ const Skills = () => {
                 if (skill.name === "HTML") {
                   icon = (
                     <svg
-                      className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
                       viewBox="0 0 48 48"
                       fill="none"
                     >
@@ -409,10 +591,11 @@ const Skills = () => {
                       ></path>
                     </svg>
                   );
-                } else if (skill.name === "CSS") {
+                }
+                if (skill.name === "CSS") {
                   icon = (
                     <svg
-                      className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
                       viewBox="0 0 48 48"
                       fill="none"
                     >
@@ -426,7 +609,7 @@ const Skills = () => {
                       ></path>
                       <path
                         fill="#FFF"
-                        d="M33.1 13L24 13 24 17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"
+                        d="M33.1 13L24 13 24  17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"
                       ></path>
                       <path
                         fill="#EEE"
@@ -434,24 +617,33 @@ const Skills = () => {
                       ></path>
                     </svg>
                   );
-                } else if (skill.name === "Bootstrap") {
+                }
+                if(skill.name === "JavaScript") {
+                  icon = (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 mr-2 md:w-12 md:h-12" viewBox="0 0 48 48">
+<path fill="#ffd600" d="M6,42V6h36v36H6z"></path><path fill="#000001" d="M29.538 32.947c.692 1.124 1.444 2.201 3.037 2.201 1.338 0 2.04-.665 2.04-1.585 0-1.101-.726-1.492-2.198-2.133l-.807-.344c-2.329-.988-3.878-2.226-3.878-4.841 0-2.41 1.845-4.244 4.728-4.244 2.053 0 3.528.711 4.592 2.573l-2.514 1.607c-.553-.988-1.151-1.377-2.078-1.377-.946 0-1.545.597-1.545 1.377 0 .964.6 1.354 1.985 1.951l.807.344C36.452 29.645 38 30.839 38 33.523 38 36.415 35.716 38 32.65 38c-2.999 0-4.702-1.505-5.65-3.368L29.538 32.947zM17.952 33.029c.506.906 1.275 1.603 2.381 1.603 1.058 0 1.667-.418 1.667-2.043V22h3.333v11.101c0 3.367-1.953 4.899-4.805 4.899-2.577 0-4.437-1.746-5.195-3.368L17.952 33.029z"></path>
+</svg>
+                  );
+                }
+                if (skill.name === "Bootstrap") {
                   icon = (
                     <svg
-                      className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
                       viewBox="0 0 48 48"
                       fill="none"
                       style={{
-                        minWidth: "1.25rem",
-                        minHeight: "1.25rem",
-                        maxWidth: "1.25rem",
-                        maxHeight: "1.25rem",
+                        minWidth: "1.75rem",
+                        minHeight: "1.75rem",
+                        maxWidth: "3rem",
+                        maxHeight: "3rem",
                         width: "100%",
                         height: "auto",
                       }}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <defs>
                         <linearGradient
-                          id="bootstrap-gradient-responsive"
+                          id="bootstrap-gradient-frontend-md"
                           x1="24"
                           x2="24"
                           y1="41"
@@ -470,19 +662,61 @@ const Skills = () => {
                         </linearGradient>
                       </defs>
                       <path
-                        fill="url(#bootstrap-gradient-responsive)"
+                        fill="url(#bootstrap-gradient-frontend-md)"
                         d="M7.373,11.443C7.293,9.132,9.094,7,11.529,7h24.946c2.435,0,4.236,2.132,4.155,4.443	c-0.077,2.221,0.023,5.097,0.747,7.443c0.681,2.207,1.801,3.652,3.593,3.981c0.206,0.038,0.363,0.205,0.363,0.415v1.438	c0,0.21-0.157,0.377-0.363,0.415c-1.792,0.328-2.912,1.773-3.593,3.981c-0.724,2.345-0.824,5.222-0.747,7.443	C40.71,38.868,38.909,41,36.475,41H11.529c-2.434,0-4.236-2.132-4.155-4.443c0.077-2.221-0.023-5.097-0.747-7.443	c-0.681-2.207-1.804-3.652-3.596-3.981c-0.206-0.038-0.363-0.205-0.363-0.415v-1.438c0-0.21,0.157-0.377,0.363-0.415	c1.792-0.328,2.915-1.773,3.596-3.981C7.35,16.54,7.451,13.664,7.373,11.443z"
                       />
                       <path
                         fill="#fff"
-                        d="M27.073,23.464v-0.028c1.853-0.32,3.299-2.057,3.299-3.97c0-1.352-0.52-2.498-1.504-3.312	c-0.981-0.812-2.357-1.241-3.981-1.241H17.45V33.08h7.475c1.942,0,3.555-0.474 4.663-1.372c1.109-0.899,1.696-2.207,1.696-3.783	C31.283,25.544,29.593,23.756,27.073,23.464z M23.59,22.608h-3.181V17.29h3.784c2.076,0,3.219,0.911,3.219,2.565	C27.413,21.63,26.055,22.608,23.59,22.608z M20.409,24.834h3.759c2.716,0,4.092,0.981,4.092,2.916c0,1.932-1.357,2.953-3.925,2.953\th-3.926V24.834z"
+                        d="M27.073,23.464v-0.028c1.853-0.32,3.299-2.057,3.299-3.97c0-1.352-0.52-2.498-1.504-3.312	c-0.981-0.812-2.357-1.241-3.981-1.241H17.45V33.08h7.475c1.942,0,3.555-0.474,4.663-1.372c1.109-0.899,1.696-2.207,1.696-3.783	C31.283,25.544,29.593,23.756,27.073,23.464z M23.59,22.608h-3.181V17.29h3.784c2.076,0,3.219,0.911,3.219,2.565	C27.413,21.63,26.055,22.608,23.59,22.608z M20.409,24.834h3.759c2.716,0,4.092,0.981,4.092,2.916c0,1.932-1.357,2.953-3.925,2.953\th-3.926V24.834z"
                       />
                     </svg>
                   );
-                } else if (skill.name === "TypeScript") {
+                }
+                if (skill.name === "TypeScript") {
                   icon = (
                     <svg
-                      className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
+                      viewBox="0 0 48 48"
+                      style={{
+                        minWidth: "1.75rem",
+                        minHeight: "1.75rem",
+                        maxWidth: "3rem",
+                        maxHeight: "3rem",
+                        width: "100%",
+                        height: "auto",
+                      }}
+                    >
+                      <linearGradient
+                        id="ts-gradient-responsive-md"
+                        x1="6"
+                        x2="42"
+                        y1="24"
+                        y2="24"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0" stopColor="#0d61a9"></stop>
+                        <stop offset="1" stopColor="#16528c"></stop>
+                      </linearGradient>
+                      <path
+                        fill="url(#ts-gradient-responsive-md)"
+                        d="M40,6H8C6.895,6,6,6.895,6,8v32c0,1.105,0.895,2,2,2h32c1.105,0,2-0.895,2-2V8 C42,6.895,41.105,6,40,6z"
+                      ></path>
+                      <path
+                        fill="#fff"
+                        d="M29.832,33.824c0.45,0.485,0.809,0.998,1.284,1.359c1.031,0.784,2.197,0.921,3.401,0.413 c0.579-0.244,0.917-0.716,0.937-1.35c0.018-0.56-0.252-1.019-0.741-1.276c-0.942-0.494-1.93-0.903-2.861-1.417 c-0.834-0.46-1.705-0.916-2.405-1.546c-1.855-1.67-1.851-4.942-0.132-6.617c0.935-0.911,2.064-1.351,3.374-1.385 c4.31,0,5.279,2.716,5.279,2.716c-0.715,0.517-2.714,1.803-2.714,1.803c-0.358-0.549-1.09-1.246-1.747-1.37 c-0.826-0.155-1.593,0.159-1.855,0.798c-0.302,0.737-0.04,1.466,0.782,1.905c0.979,0.522,1.997,0.973,2.997,1.457 c0.98,0.474,1.918,1.018,2.592,1.899c1.704,2.229,1.365,6.494-2.537,7.506c-2.133,0.553-4.218,0.427-6.177-0.718 c-0.923-0.539-1.783-1.581-2.311-2.488C27,35.513,28.967,34.329,29.832,33.824z"
+                      ></path>
+                      <polygon
+                        fill="#fff"
+                        points="14,22 14,25.034 18.972,25.034 18.972,38.972 21.965,38.972 22.018,25.034 27,25.034 27,22"
+                      ></polygon>
+                    </svg>
+                  );
+                }
+                if (skill.name === "Tailwind CSS") {
+                  icon = (
+                    <svg
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
                       viewBox="0 0 48 48"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -493,17 +727,18 @@ const Skills = () => {
                       />
                     </svg>
                   );
-                } else if (skill.name === "PHP") {
+                }
+                if (skill.name === "PHP") {
                   icon = (
                     <img
                       src="/php-6.svg"
                       alt="PHP"
-                      className="w-5 h-5 mr-2 md:w-12 md:h-12"
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
                       style={{
                         background: "white",
                         borderRadius: "4px",
-                        minWidth: "1.25rem",
-                        minHeight: "1.25rem",
+                        minWidth: "1.75rem",
+                        minHeight: "1.75rem",
                         maxWidth: "3rem",
                         maxHeight: "3rem",
                         width: "100%",
@@ -515,20 +750,20 @@ const Skills = () => {
                 return (
                   <div
                     key={skill.name}
-                    className="bg-gray-50 rounded-lg shadow p-3 flex flex-col items-start"
+                    className="group transform hover:scale-105 transition-all duration-500"
                   >
-                    <div className="flex justify-between items-center w-full mb-1">
-                      <span className="flex items-center text-sm font-medium text-gray-700">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="flex items-center text-base md:text-lg lg:text-xl font-medium text-gray-700">
                         {icon}
                         {skill.name}
                       </span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-base md:text-lg text-gray-500">
                         {skill.level}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000"
+                        className="h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full transition-all duration-1000 group-hover:from-pink-600 group-hover:to-indigo-600 transform group-hover:scale-x-105"
                         style={{
                           width: `${skill.level}%`,
                           animation: `expand-frontend-${index} 1.5s ease-out forwards`,
@@ -539,230 +774,70 @@ const Skills = () => {
                 );
               })}
           </div>
-        </div>
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-          {skills
-            .filter((skill) =>
-              [
-                "React",
-                "TypeScript",
-                "HTML",
-                "CSS",
-                "Bootstrap",
-                "Tailwind CSS",
-                "PHP",
-              ].includes(skill.name)
-            )
-            .map((skill, index) => {
-              let icon = getSkillIcon(skill.name);
-              if (skill.name === "HTML") {
-                icon = (
-                  <svg
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                  >
-                    <path
-                      fill="#E65100"
-                      d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"
-                    ></path>
-                    <path
-                      fill="#FF6D00"
-                      d="M24 8L24 39.9 35.2 36.7 37.7 8z"
-                    ></path>
-                    <path
-                      fill="#FFF"
-                      d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"
-                    ></path>
-                    <path
-                      fill="#EEE"
-                      d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"
-                    ></path>
-                  </svg>
-                );
-              }
-              if (skill.name === "CSS") {
-                icon = (
-                  <svg
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                  >
-                    <path
-                      fill="#0277BD"
-                      d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"
-                    ></path>
-                    <path
-                      fill="#039BE5"
-                      d="M24 8L24 39.9 35.2 36.7 37.7 8z"
-                    ></path>
-                    <path
-                      fill="#FFF"
-                      d="M33.1 13L24 13 24  17 28.9 17 28.6 21 24 21 24 25 28.4 25 28.1 29.5 24 30.9 24 35.1 31.9 32.5 32.6 21 32.6 21z"
-                    ></path>
-                    <path
-                      fill="#EEE"
-                      d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4L19.8,27z"
-                    ></path>
-                  </svg>
-                );
-              }
-              if (skill.name === "Bootstrap") {
-                icon = (
-                  <svg
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    style={{
-                      minWidth: "1.75rem",
-                      minHeight: "1.75rem",
-                      maxWidth: "3rem",
-                      maxHeight: "3rem",
-                      width: "100%",
-                      height: "auto",
-                    }}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="bootstrap-gradient-frontend-md"
-                        x1="24"
-                        x2="24"
-                        y1="41"
-                        y2="7"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop offset="0" stopColor="#643499" />
-                        <stop offset=".011" stopColor="#68369f" />
-                        <stop offset=".135" stopColor="#773db6" />
-                        <stop offset=".193" stopColor="#8042c3" />
-                        <stop offset=".248" stopColor="#8343c8" />
-                        <stop offset=".388" stopColor="#8444c9" />
-                        <stop offset=".732" stopColor="#9751d2" />
-                        <stop offset=".997" stopColor="#9c55d4" />
-                        <stop offset="1" stopColor="#9c55d4" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      fill="url(#bootstrap-gradient-frontend-md)"
-                      d="M7.373,11.443C7.293,9.132,9.094,7,11.529,7h24.946c2.435,0,4.236,2.132,4.155,4.443	c-0.077,2.221,0.023,5.097,0.747,7.443c0.681,2.207,1.801,3.652,3.593,3.981c0.206,0.038,0.363,0.205,0.363,0.415v1.438	c0,0.21-0.157,0.377-0.363,0.415c-1.792,0.328-2.912,1.773-3.593,3.981c-0.724,2.345-0.824,5.222-0.747,7.443	C40.71,38.868,38.909,41,36.475,41H11.529c-2.434,0-4.236-2.132-4.155-4.443c0.077-2.221-0.023-5.097-0.747-7.443	c-0.681-2.207-1.804-3.652-3.596-3.981c-0.206-0.038-0.363-0.205-0.363-0.415v-1.438c0-0.21,0.157-0.377,0.363-0.415	c1.792-0.328,2.915-1.773,3.596-3.981C7.35,16.54,7.451,13.664,7.373,11.443z"
-                    />
-                    <path
-                      fill="#fff"
-                      d="M27.073,23.464v-0.028c1.853-0.32,3.299-2.057,3.299-3.97c0-1.352-0.52-2.498-1.504-3.312	c-0.981-0.812-2.357-1.241-3.981-1.241H17.45V33.08h7.475c1.942,0,3.555-0.474,4.663-1.372c1.109-0.899,1.696-2.207,1.696-3.783	C31.283,25.544,29.593,23.756,27.073,23.464z M23.59,22.608h-3.181V17.29h3.784c2.076,0,3.219,0.911,3.219,2.565	C27.413,21.63,26.055,22.608,23.59,22.608z M20.409,24.834h3.759c2.716,0,4.092,0.981,4.092,2.916c0,1.932-1.357,2.953-3.925,2.953\th-3.926V24.834z"
-                    />
-                  </svg>
-                );
-              }
-              if (skill.name === "TypeScript") {
-                icon = (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    viewBox="0 0 48 48"
-                    style={{
-                      minWidth: "1.75rem",
-                      minHeight: "1.75rem",
-                      maxWidth: "3rem",
-                      maxHeight: "3rem",
-                      width: "100%",
-                      height: "auto",
-                    }}
-                  >
-                    <linearGradient
-                      id="ts-gradient-responsive-md"
-                      x1="6"
-                      x2="42"
-                      y1="24"
-                      y2="24"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0" stopColor="#0d61a9"></stop>
-                      <stop offset="1" stopColor="#16528c"></stop>
-                    </linearGradient>
-                    <path
-                      fill="url(#ts-gradient-responsive-md)"
-                      d="M40,6H8C6.895,6,6,6.895,6,8v32c0,1.105,0.895,2,2,2h32c1.105,0,2-0.895,2-2V8 C42,6.895,41.105,6,40,6z"
-                    ></path>
-                    <path
-                      fill="#fff"
-                      d="M29.832,33.824c0.45,0.485,0.809,0.998,1.284,1.359c1.031,0.784,2.197,0.921,3.401,0.413 c0.579-0.244,0.917-0.716,0.937-1.35c0.018-0.56-0.252-1.019-0.741-1.276c-0.942-0.494-1.93-0.903-2.861-1.417 c-0.834-0.46-1.705-0.916-2.405-1.546c-1.855-1.67-1.851-4.942-0.132-6.617c0.935-0.911,2.064-1.351,3.374-1.385 c4.31,0,5.279,2.716,5.279,2.716c-0.715,0.517-2.714,1.803-2.714,1.803c-0.358-0.549-1.09-1.246-1.747-1.37 c-0.826-0.155-1.593,0.159-1.855,0.798c-0.302,0.737-0.04,1.466,0.782,1.905c0.979,0.522,1.997,0.973,2.997,1.457 c0.98,0.474,1.918,1.018,2.592,1.899c1.704,2.229,1.365,6.494-2.537,7.506c-2.133,0.553-4.218,0.427-6.177-0.718 c-0.923-0.539-1.783-1.581-2.311-2.488C27,35.513,28.967,34.329,29.832,33.824z"
-                    ></path>
-                    <polygon
-                      fill="#fff"
-                      points="14,22 14,25.034 18.972,25.034 18.972,38.972 21.965,38.972 22.018,25.034 27,25.034 27,22"
-                    ></polygon>
-                  </svg>
-                );
-              }
-              if (skill.name === "Tailwind CSS") {
-                icon = (
-                  <svg
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill="#00acc1"
-                      d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"
-                    />
-                  </svg>
-                );
-              }
-              if (skill.name === "PHP") {
-                icon = (
-                  <img
-                    src="/php-6.svg"
-                    alt="PHP"
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    style={{
-                      background: "white",
-                      borderRadius: "4px",
-                      minWidth: "1.75rem",
-                      minHeight: "1.75rem",
-                      maxWidth: "3rem",
-                      maxHeight: "3rem",
-                      width: "100%",
-                      height: "auto",
-                    }}
-                  />
-                );
-              }
-              return (
-                <div
-                  key={skill.name}
-                  className="group transform hover:scale-105 transition-all duration-500"
-                >
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="flex items-center text-base md:text-lg lg:text-xl font-medium text-gray-700">
-                      {icon}
-                      {skill.name}
-                    </span>
-                    <span className="text-base md:text-lg text-gray-500">
-                      {skill.level}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full transition-all duration-1000 group-hover:from-pink-600 group-hover:to-indigo-600 transform group-hover:scale-x-105"
-                      style={{
-                        width: `${skill.level}%`,
-                        animation: `expand-frontend-${index} 1.5s ease-out forwards`,
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
 
-        {/* Backend Skills */}
-        <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
-          Backend
-        </h2>
-        <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
-          <div className="space-y-4">
+          {/* Backend Skills */}
+          <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
+            Backend
+          </h2>
+          <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
+            <div className="space-y-4">
+              {skills
+                .filter((skill) =>
+                  ["Node.js", "Express.js", "XAMPP"].includes(skill.name)
+                )
+                .map((skill, index) => {
+                  let icon = getSkillIcon(skill.name);
+                  if (skill.name === "Express.js") {
+                    icon = (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 50 50"
+                        className="w-4 h-4 mr-2 md:w-12 md:h-12"
+                        style={{
+                          minWidth: "1rem",
+                          minHeight: "1rem",
+                          maxWidth: "2rem",
+                          maxHeight: "2rem",
+                          width: "100%",
+                          height: "auto",
+                        }}
+                      >
+                        <path
+                          fill="#212121"
+                          d="M49.729 11h-.85c-1.051 0-2.041.49-2.68 1.324l-8.7 11.377-8.7-11.377C28.162 11.49 27.171 11 26.121 11h-.85l10.971 14.346L25.036 40h.85c1.051 0 2.041-.49 2.679-1.324L37.5 26.992l8.935 11.684C47.073 39.51 48.063 40 49.114 40h.85L38.758 25.346 49.729 11zM21.289 34.242c-2.554 3.881-7.582 5.87-12.389 4.116C4.671 36.815 2 32.611 2 28.109L2 27h12v0h11l0-4.134c0-6.505-4.818-12.2-11.295-12.809C6.273 9.358 0 15.21 0 22.5l0 5.573c0 5.371 3.215 10.364 8.269 12.183 6.603 2.376 13.548-1.17 15.896-7.256 0 0 0 0 0 0h-.638C22.616 33 21.789 33.481 21.289 34.242zM2 22.5C2 16.71 6.71 12 12.5 12S23 16.71 23 22.5V25H2V22.5z"
+                        />
+                      </svg>
+                    );
+                  }
+                  return (
+                    <div
+                      key={skill.name}
+                      className="bg-gray-50 rounded-lg shadow p-3 flex flex-col items-start"
+                    >
+                      <div className="flex justify-between items-center w-full mb-1">
+                        <span className="flex items-center text-sm font-medium text-gray-700">
+                          {icon}
+                          {skill.name}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${skill.level}%`,
+                            animation: `expand-backend-${index} 1.5s ease-out forwards`,
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
             {skills
               .filter((skill) =>
                 ["Node.js", "Express.js", "XAMPP"].includes(skill.name)
@@ -774,12 +849,12 @@ const Skills = () => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 50 50"
-                      className="w-4 h-4 mr-2 md:w-12 md:h-12"
+                      className="w-7 h-7 mr-2 md:w-12 md:h-12"
                       style={{
-                        minWidth: "1rem",
-                        minHeight: "1rem",
-                        maxWidth: "2rem",
-                        maxHeight: "2rem",
+                        minWidth: "1.75rem",
+                        minHeight: "1.75rem",
+                        maxWidth: "3rem",
+                        maxHeight: "3rem",
                         width: "100%",
                         height: "auto",
                       }}
@@ -794,20 +869,20 @@ const Skills = () => {
                 return (
                   <div
                     key={skill.name}
-                    className="bg-gray-50 rounded-lg shadow p-3 flex flex-col items-start"
+                    className="group transform hover:scale-105 transition-all duration-500"
                   >
-                    <div className="flex justify-between items-center w-full mb-1">
-                      <span className="flex items-center text-sm font-medium text-gray-700">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="flex items-center text-base md:text-lg lg:text-xl font-medium text-gray-700">
                         {icon}
                         {skill.name}
                       </span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-base md:text-lg text-gray-500">
                         {skill.level}%
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000"
+                        className="h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full transition-all duration-1000 group-hover:from-pink-600 group-hover:to-indigo-600 transform group-hover:scale-x-105"
                         style={{
                           width: `${skill.level}%`,
                           animation: `expand-backend-${index} 1.5s ease-out forwards`,
@@ -818,44 +893,64 @@ const Skills = () => {
                 );
               })}
           </div>
-        </div>
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-          {skills
-            .filter((skill) =>
-              ["Node.js", "Express.js", "XAMPP"].includes(skill.name)
-            )
-            .map((skill, index) => {
-              let icon = getSkillIcon(skill.name);
-              if (skill.name === "Express.js") {
-                icon = (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 50 50"
-                    className="w-7 h-7 mr-2 md:w-12 md:h-12"
-                    style={{
-                      minWidth: "1.75rem",
-                      minHeight: "1.75rem",
-                      maxWidth: "3rem",
-                      maxHeight: "3rem",
-                      width: "100%",
-                      height: "auto",
-                    }}
-                  >
-                    <path
-                      fill="#212121"
-                      d="M49.729 11h-.85c-1.051 0-2.041.49-2.68 1.324l-8.7 11.377-8.7-11.377C28.162 11.49 27.171 11 26.121 11h-.85l10.971 14.346L25.036 40h.85c1.051 0 2.041-.49 2.679-1.324L37.5 26.992l8.935 11.684C47.073 39.51 48.063 40 49.114 40h.85L38.758 25.346 49.729 11zM21.289 34.242c-2.554 3.881-7.582 5.87-12.389 4.116C4.671 36.815 2 32.611 2 28.109L2 27h12v0h11l0-4.134c0-6.505-4.818-12.2-11.295-12.809C6.273 9.358 0 15.21 0 22.5l0 5.573c0 5.371 3.215 10.364 8.269 12.183 6.603 2.376 13.548-1.17 15.896-7.256 0 0 0 0 0 0h-.638C22.616 33 21.789 33.481 21.289 34.242zM2 22.5C2 16.71 6.71 12 12.5 12S23 16.71 23 22.5V25H2V22.5z"
-                    />
-                  </svg>
-                );
-              }
-              return (
+
+          {/* Database */}
+          <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
+            Database
+          </h2>
+          <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
+            <div className="space-y-4">
+              {skills
+                .filter((skill) =>
+                  ["MongoDB", "AWS", "Firebase", "PhpMyAdmin"].includes(
+                    skill.name
+                  )
+                )
+                .map((skill, index) => {
+                  const icon = getSkillIcon(skill.name);
+                  return (
+                    <div
+                      key={skill.name}
+                      className="bg-gray-50 rounded-lg shadow p-3 flex flex-col items-start"
+                    >
+                      <div className="flex justify-between items-center w-full mb-1">
+                        <span className="flex items-center text-sm font-medium text-gray-700">
+                          {icon}
+                          {skill.name}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000"
+                          style={{
+                            width: `${skill.level}%`,
+                            animation: `expand-db-${index} 1.5s ease-out forwards`,
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
+            {skills
+              .filter((skill) =>
+                ["MongoDB", "AWS", "Firebase", "PhpMyAdmin"].includes(
+                  skill.name
+                )
+              )
+              .map((skill, index) => (
                 <div
                   key={skill.name}
                   className="group transform hover:scale-105 transition-all duration-500"
                 >
                   <div className="flex justify-between items-center mb-2">
                     <span className="flex items-center text-base md:text-lg lg:text-xl font-medium text-gray-700">
-                      {icon}
+                      {getSkillIcon(skill.name)}
                       {skill.name}
                     </span>
                     <span className="text-base md:text-lg text-gray-500">
@@ -867,234 +962,159 @@ const Skills = () => {
                       className="h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full transition-all duration-1000 group-hover:from-pink-600 group-hover:to-indigo-600 transform group-hover:scale-x-105"
                       style={{
                         width: `${skill.level}%`,
-                        animation: `expand-backend-${index} 1.5s ease-out forwards`,
+                        animation: `expand-db-${index} 1.5s ease-out forwards`,
                       }}
                     ></div>
                   </div>
                 </div>
-              );
-            })}
-        </div>
-
-        {/* Database */}
-        <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
-          Database
-        </h2>
-        <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
-          <div className="space-y-4">
-            {skills
-              .filter((skill) =>
-                ["MongoDB", "AWS", "Firebase", "PhpMyAdmin"].includes(
-                  skill.name
-                )
-              )
-              .map((skill, index) => {
-                const icon = getSkillIcon(skill.name);
-                return (
-                  <div
-                    key={skill.name}
-                    className="bg-gray-50 rounded-lg shadow p-3 flex flex-col items-start"
-                  >
-                    <div className="flex justify-between items-center w-full mb-1">
-                      <span className="flex items-center text-sm font-medium text-gray-700">
-                        {icon}
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-gray-500">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full transition-all duration-1000"
-                        style={{
-                          width: `${skill.level}%`,
-                          animation: `expand-db-${index} 1.5s ease-out forwards`,
-                        }}
-                      ></div>
-                    </div>
-                  </div>
-                );
-              })}
+              ))}
           </div>
-        </div>
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-          {skills
-            .filter((skill) =>
-              ["MongoDB", "AWS", "Firebase", "PhpMyAdmin"].includes(skill.name)
-            )
-            .map((skill, index) => (
-              <div
-                key={skill.name}
-                className="group transform hover:scale-105 transition-all duration-500"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="flex items-center text-base md:text-lg lg:text-xl font-medium text-gray-700">
-                    {getSkillIcon(skill.name)}
-                    {skill.name}
-                  </span>
-                  <span className="text-base md:text-lg text-gray-500">
-                    {skill.level}%
+          {/* Tools Section */}
+          <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
+            Tools
+          </h2>
+          <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
+            <div className="space-y-4">
+              {[
+                {
+                  name: "VS Code",
+                  icon: (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                      className="mr-2"
+                      style={{
+                        width: "clamp(1.5rem, 8vw, 2.5rem)",
+                        height: "clamp(1.5rem, 8vw, 2.5rem)",
+                        minWidth: "1.25rem",
+                        minHeight: "1.25rem",
+                        maxWidth: "2.5rem",
+                        maxHeight: "2.5rem",
+                        display: "block",
+                      }}
+                    >
+                      <linearGradient
+                        id="vscode-gradient1"
+                        x1="37.8"
+                        x2="37.8"
+                        y1="43.37"
+                        y2="7.42"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0" stopColor="#29b6f6"></stop>
+                        <stop offset="1" stopColor="#13b2f6"></stop>
+                      </linearGradient>
+                      <path
+                        fill="url(#vscode-gradient1)"
+                        d="M34.176,4.249c0.188,0.092,5.688,2.716,8.374,3.998C43.437,8.67,44,9.564,44,10.546v26.86 c0,0.981-0.559,1.874-1.443,2.299c-2.548,1.228-7.611,3.666-7.948,3.826C34.361,43.649,33.709,44,33.181,44 c-0.678,0-1.133-0.316-1.58-0.73L34,35.711V5.715l-2.254-1.135C32.228,4.109,32.896,4,33.291,4C33.653,4,33.948,4.138,34.176,4.249z"
+                      ></path>
+                      <linearGradient
+                        id="vscode-gradient2"
+                        x1="6.085"
+                        x2="34.793"
+                        y1="34.801"
+                        y2="7.173"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset=".115" stopColor="#0076bb"></stop>
+                        <stop offset=".257" stopColor="#0069b0"></stop>
+                        <stop offset=".28" stopColor="#0069b0"></stop>
+                        <stop offset=".424" stopColor="#0069b0"></stop>
+                        <stop offset=".491" stopColor="#0072b7"></stop>
+                        <stop offset=".577" stopColor="#0076bb"></stop>
+                        <stop offset=".795" stopColor="#0076bb"></stop>
+                        <stop offset="1" stopColor="#006eb9"></stop>
+                      </linearGradient>
+                      <path
+                        fill="url(#vscode-gradient2)"
+                        d="M9,33.896l25-19.023V5.83c0-1.299-1.662-1.808-2.337-1.184 C31.008,5.25,4.658,29.239,4.658,29.239c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"
+                      />
+                      <path
+                        fill="#0288d1"
+                        d="M9,14.104l25,19.054v8.771c0,1.198-1.42,2.193-2.399,1.341L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  name: "Git",
+                  icon: (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-2"
+                      viewBox="0 0 48 48"
+                      style={{
+                        width: "clamp(1.5rem, 8vw, 2.5rem)",
+                        height: "clamp(1.5rem, 8vw, 2.5rem)",
+                        minWidth: "1.25rem",
+                        minHeight: "1.25rem",
+                        maxWidth: "2.5rem",
+                        maxHeight: "2.5rem",
+                        display: "block",
+                      }}
+                    >
+                      <path
+                        fill="#F4511E"
+                        d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"
+                      ></path>
+                    </svg>
+                  ),
+                },
+                {
+                  name: "GitHub",
+                  icon: (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-2"
+                      viewBox="0 0 72 72"
+                      style={{
+                        width: "clamp(1.5rem, 8vw, 2.5rem)",
+                        height: "clamp(1.5rem, 8vw, 2.5rem)",
+                        minWidth: "1.25rem",
+                        minHeight: "1.25rem",
+                        maxWidth: "2.5rem",
+                        maxHeight: "2.5rem",
+                        display: "block",
+                      }}
+                    >
+                      <path d="M 36 12 C 22.745 12 12 22.745 12 36 C 12 49.255 22.745 60 36 60 C 49.255 60 60 49.255 60 36 C 60 22.745 49.255 12 36 12 z M 36 20 C 44.837 20 52 27.163 52 36 C 52 43.284178 47.128298 49.420174 40.46875 51.355469 C 40.198559 51.103128 39.941627 50.74363 39.953125 50.285156 C 39.980125 49.233156 39.953125 46.778953 39.953125 45.876953 C 39.953125 44.328953 38.972656 43.230469 38.972656 43.230469 C 38.972656 43.230469 46.654297 43.316141 46.654297 35.119141 C 46.654297 31.957141 45.003906 30.310547 45.003906 30.310547 C 45.003906 30.310547 45.872125 26.933953 44.703125 25.501953 C 43.393125 25.359953 41.046922 26.753297 40.044922 27.404297 C 40.044922 27.404297 38.457406 26.753906 35.816406 26.753906 C 33.175406 26.753906 31.587891 27.404297 31.587891 27.404297 C 30.586891 26.753297 28.239687 25.360953 26.929688 25.501953 C 25.760688 26.933953 26.628906 30.310547 26.628906 30.310547 C 26.628906 30.310547 24.974609 31.956141 24.974609 35.119141 C 24.974609 43.316141 32.65625 43.230469 32.65625 43.230469 C 32.65625 43.230469 31.782197 44.226723 31.693359 45.652344 C 31.180078 45.833418 30.48023 46.048828 29.8125 46.048828 C 28.2025 46.048828 26.978297 44.483766 26.529297 43.759766 C 26.086297 43.045766 25.178031 42.447266 24.332031 42.447266 C 23.775031 42.447266 23.503906 42.726922 23.503906 43.044922 C 23.503906 43.362922 24.285781 43.585781 24.800781 44.175781 C 25.887781 45.420781 25.866281 48.21875 29.738281 48.21875 C 30.196553 48.21875 31.021102 48.11542 31.677734 48.025391 C 31.674106 48.90409 31.663893 49.74536 31.677734 50.285156 C 31.688158 50.700354 31.476914 51.032045 31.236328 51.279297 C 24.726159 49.25177 20 43.177886 20 36 C 20 27.163 27.163 20 36 20 z"></path>
+                    </svg>
+                  ),
+                },
+                {
+                  name: "Postman",
+                  icon: (
+                    <img
+                      className="mr-2"
+                      style={{
+                        width: "clamp(1.5rem, 8vw, 2.5rem)",
+                        height: "clamp(1.5rem, 8vw, 2.5rem)",
+                        minWidth: "1.25rem",
+                        minHeight: "1.25rem",
+                        maxWidth: "2.5rem",
+                        maxHeight: "2.5rem",
+                        display: "block",
+                      }}
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE6UlEQVR4nNWaa2hcVRCAr9oKgo/6alUE0eKDqEl25uaB/oigiKIoqKGiqNDg7sxNYxsQLfojiCBtRasWQf0nKP6wiIj4KPjHSh9qVfzRICL+EtSWZO/MTbWadGXu3d3cPHazj7M3eODABrLnfHNmzrzOep6DMTOau0zJf1AIXhOGfUrwkzJOCeHfwnhKGY8p46QQfq6Mu5TwIRnrvdhbzVHkG8/XAMeV8WAZstTMFMI5ZTisBdwyvbVnXWbgUR4vFYY9Shg1C11bGDghhK/oyMCGjoGX8rhWCJ5RQnUFrosnYSSE20sTQ2ucwkserxPGbzsGzkvM64jt6QQ+JP+ejp4619IGhBLgvW3B2wUThtnM4Xn+oksAj7cEL4zUindxLgTjKSlgoUn43H2Jm1tdeK0KAbMh412NmU3Qd70ySJZwyrCjmMeN5ulm2O9Twv1L/xckHO27ZmVXyfhDpidMsC3NUGT/KiXYqYxfLiPE4bouVhifzdg0fi9NeKcvgGfYURoePkPYH6pxJ56qE2FxJlsB8IvK/tNb+q+swpN/f0gwWENjoVL3+mVOH/ZkajqJSfxSPUDCxyLy74zvIec26WjPLXUE370AvjgyeIEw/JUh/EElfF0Jj6a9i7nLiPH2+DPB23UEl6k8njfveQifyOrENcjdWjUZwheU4MN0xI1ZCN9qYL2xefMh+DoD+L1/BF1nxxrP48aKvZc87zQh/DEWjvGAMhYbXO+rROKRgQ2dDlpCMGGgi+E908TWnnVC+Fvza+KcOR5PC/Bw58BxThiC6l1bBD8z1n+5ELwsDN+1uMewJ4QvdgSeYTZifLQWvHKu2+6AFHq7Wk0YTXgLXp+5h8eT5strw/u3RQxPmlkp4UdtaPhTr1yAu4SfiYLcHRX4E0HuCksNKimAmWxI/ubE48BoW/sRHrVFjrsUICS4u+bJBzheES4q9PZYLdymANPmQv91Aw9iQcmi5PGx/nMXuMqJoTXK8HxEfq4SA1rxPLqMtj03ERhECnhztUfEsNecg8Ef23zTOXbZzJQqblsJf3Zkrie9xgNHPVXC+8rwhhB8bxoVhvfsbyX/BtOI9ZDigJnHi5ym64R/Or/E5fXGTAMW4Q06ubDd65OI63AvxkkzoX0OF/wgvgdlaEu4TANWSZnHcAxfshBgceBVR4u9W/E26REGOCCM/7iG10TbO5Pcu0PwlmXGBUgn4NlmblPsNdppnwjjO4vhS+ODZ1mvs5NtGWGYrZiqV05jncAXC9jfCXvXpfNAqqCBbe3Ch6N9Fyrjm1n1kySV5Sa9/ib6n2n40nDXmUkV5TYl0XqTMFpQUsYXrkFvVIG3dkhE/iPK+Gtm4JxKoxePOMSv2JErpwh5XGtJWdbgmpy+LttWibVAuH0lVxmnx4y7kj5O9gJIrcZW6hVmSYEfZ6yEz1m73fJ5a38o4cdZt96F8ZsVX29C8q/Nsrmrjc/iis3dqhBxXr96Dxu6xAJwLl0o/e8eOMJyCdr0sOed1XzoEEsXWn1iSpuT1Z6ZC0CoTZtN3WdWwiMZwh8KC71Xey6HuS9hfLrDT67FuF/k+qE7PeLSkHG308cQglAIXsr0ByCWTMWNKcJDrVz0+DuE+y04WhsmM/DlhhUW9nMbK/HKrcpJ6xiUIc3kpqxGEIZP4mZugA9EQd8lLjb/DxIqeRQSOj0MAAAAAElFTkSuQmCC"
+                      alt="external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo"
+                    />
+                  ),
+                },
+              ].map((tool) => (
+                <div
+                  key={tool.name}
+                  className="bg-gray-50 rounded-lg shadow p-3 flex items-center"
+                >
+                  {tool.icon}
+                  <span className="text-sm font-medium text-gray-700">
+                    {tool.name}
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full transition-all duration-1000 group-hover:from-pink-600 group-hover:to-indigo-600 transform group-hover:scale-x-105"
-                    style={{
-                      width: `${skill.level}%`,
-                      animation: `expand-db-${index} 1.5s ease-out forwards`,
-                    }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-        </div>
-        {/* Tools Section */}
-        <h2 className="text-lg sm:text-2xl font-semibold text-gray-800 mt-8 mb-4">
-          Tools
-        </h2>
-        <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
-          <div className="space-y-4">
-            {[
-              {
-                name: "VS Code",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 48 48"
-                    className="mr-2"
-                    style={{
-                      width: "clamp(1.5rem, 8vw, 2.5rem)",
-                      height: "clamp(1.5rem, 8vw, 2.5rem)",
-                      minWidth: "1.25rem",
-                      minHeight: "1.25rem",
-                      maxWidth: "2.5rem",
-                      maxHeight: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    <linearGradient
-                      id="vscode-gradient1"
-                      x1="37.8"
-                      x2="37.8"
-                      y1="43.37"
-                      y2="7.42"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0" stopColor="#29b6f6"></stop>
-                      <stop offset="1" stopColor="#13b2f6"></stop>
-                    </linearGradient>
-                    <path
-                      fill="url(#vscode-gradient1)"
-                      d="M34.176,4.249c0.188,0.092,5.688,2.716,8.374,3.998C43.437,8.67,44,9.564,44,10.546v26.86 c0,0.981-0.559,1.874-1.443,2.299c-2.548,1.228-7.611,3.666-7.948,3.826C34.361,43.649,33.709,44,33.181,44 c-0.678,0-1.133-0.316-1.58-0.73L34,35.711V5.715l-2.254-1.135C32.228,4.109,32.896,4,33.291,4C33.653,4,33.948,4.138,34.176,4.249z"
-                    ></path>
-                    <linearGradient
-                      id="vscode-gradient2"
-                      x1="6.085"
-                      x2="34.793"
-                      y1="34.801"
-                      y2="7.173"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset=".115" stopColor="#0076bb"></stop>
-                      <stop offset=".257" stopColor="#0069b0"></stop>
-                      <stop offset=".28" stopColor="#0069b0"></stop>
-                      <stop offset=".424" stopColor="#0069b0"></stop>
-                      <stop offset=".491" stopColor="#0072b7"></stop>
-                      <stop offset=".577" stopColor="#0076bb"></stop>
-                      <stop offset=".795" stopColor="#0076bb"></stop>
-                      <stop offset="1" stopColor="#006eb9"></stop>
-                    </linearGradient>
-                    <path
-                      fill="url(#vscode-gradient2)"
-                      d="M9,33.896l25-19.023V5.83c0-1.299-1.662-1.808-2.337-1.184 C31.008,5.25,4.658,29.239,4.658,29.239c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"
-                    />
-                    <path
-                      fill="#0288d1"
-                      d="M9,14.104l25,19.054v8.771c0,1.198-1.42,2.193-2.399,1.341L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
-                    />
-                  </svg>
-                ),
-              },
-              {
-                name: "Git",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="mr-2"
-                    viewBox="0 0 48 48"
-                    style={{
-                      width: "clamp(1.5rem, 8vw, 2.5rem)",
-                      height: "clamp(1.5rem, 8vw, 2.5rem)",
-                      minWidth: "1.25rem",
-                      minHeight: "1.25rem",
-                      maxWidth: "2.5rem",
-                      maxHeight: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    <path
-                      fill="#F4511E"
-                      d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"
-                    ></path>
-                  </svg>
-                ),
-              },
-              {
-                name: "GitHub",
-                icon: (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="mr-2"
-                    viewBox="0 0 72 72"
-                    style={{
-                      width: "clamp(1.5rem, 8vw, 2.5rem)",
-                      height: "clamp(1.5rem, 8vw, 2.5rem)",
-                      minWidth: "1.25rem",
-                      minHeight: "1.25rem",
-                      maxWidth: "2.5rem",
-                      maxHeight: "2.5rem",
-                      display: "block",
-                    }}
-                  >
-                    <path d="M 36 12 C 22.745 12 12 22.745 12 36 C 12 49.255 22.745 60 36 60 C 49.255 60 60 49.255 60 36 C 60 22.745 49.255 12 36 12 z M 36 20 C 44.837 20 52 27.163 52 36 C 52 43.284178 47.128298 49.420174 40.46875 51.355469 C 40.198559 51.103128 39.941627 50.74363 39.953125 50.285156 C 39.980125 49.233156 39.953125 46.778953 39.953125 45.876953 C 39.953125 44.328953 38.972656 43.230469 38.972656 43.230469 C 38.972656 43.230469 46.654297 43.316141 46.654297 35.119141 C 46.654297 31.957141 45.003906 30.310547 45.003906 30.310547 C 45.003906 30.310547 45.872125 26.933953 44.703125 25.501953 C 43.393125 25.359953 41.046922 26.753297 40.044922 27.404297 C 40.044922 27.404297 38.457406 26.753906 35.816406 26.753906 C 33.175406 26.753906 31.587891 27.404297 31.587891 27.404297 C 30.586891 26.753297 28.239687 25.360953 26.929688 25.501953 C 25.760688 26.933953 26.628906 30.310547 26.628906 30.310547 C 26.628906 30.310547 24.974609 31.956141 24.974609 35.119141 C 24.974609 43.316141 32.65625 43.230469 32.65625 43.230469 C 32.65625 43.230469 31.782197 44.226723 31.693359 45.652344 C 31.180078 45.833418 30.48023 46.048828 29.8125 46.048828 C 28.2025 46.048828 26.978297 44.483766 26.529297 43.759766 C 26.086297 43.045766 25.178031 42.447266 24.332031 42.447266 C 23.775031 42.447266 23.503906 42.726922 23.503906 43.044922 C 23.503906 43.362922 24.285781 43.585781 24.800781 44.175781 C 25.887781 45.420781 25.866281 48.21875 29.738281 48.21875 C 30.196553 48.21875 31.021102 48.11542 31.677734 48.025391 C 31.674106 48.90409 31.663893 49.74536 31.677734 50.285156 C 31.688158 50.700354 31.476914 51.032045 31.236328 51.279297 C 24.726159 49.25177 20 43.177886 20 36 C 20 27.163 27.163 20 36 20 z"></path>
-                </svg>
-              ),
-            },
-            {
-              name: "Postman",
-              icon: (
-                <img
-                  className="mr-2"
-                  style={{
-                    width: "clamp(1.5rem, 8vw, 2.5rem)",
-                    height: "clamp(1.5rem, 8vw, 2.5rem)",
-                    minWidth: "1.25rem",
-                    minHeight: "1.25rem",
-                    maxWidth: "2.5rem",
-                    maxHeight: "2.5rem",
-                    display: "block",
-                  }}
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE6UlEQVR4nNWaa2hcVRCAr9oKgo/6alUE0eKDqEl25uaB/oigiKIoqKGiqNDg7sxNYxsQLfojiCBtRasWQf0nKP6wiIj4KPjHSh9qVfzRICL+EtSWZO/MTbWadGXu3d3cPHazj7M3eODABrLnfHNmzrzOep6DMTOau0zJf1AIXhOGfUrwkzJOCeHfwnhKGY8p46QQfq6Mu5TwIRnrvdhbzVHkG8/XAMeV8WAZstTMFMI5ZTisBdwyvbVnXWbgUR4vFYY9Shg1C11bGDghhK/oyMCGjoGX8rhWCJ5RQnUFrosnYSSE20sTQ2ucwkserxPGbzsGzkvM64jt6QQ+JP+ejp4619IGhBLgvW3B2wUThtnM4Xn+oksAj7cEL4zUindxLgTjKSlgoUn43H2Jm1tdeK0KAbMh412NmU3Qd70ySJZwyrCjmMeN5ulm2O9Twv1L/xckHO27ZmVXyfhDpidMsC3NUGT/KiXYqYxfLiPE4bouVhifzdg0fi9NeKcvgGfYURoePkPYH6pxJ56qE2FxJlsB8IvK/tNb+q+swpN/f0gwWENjoVL3+mVOH/ZkajqJSfxSPUDCxyLy74zvIec26WjPLXUE370AvjgyeIEw/JUh/EElfF0Jj6a9i7nLiPH2+DPB23UEl6k8njfveQifyOrENcjdWjUZwheU4MN0xI1ZCN9qYL2xefMh+DoD+L1/BF1nxxrP48aKvZc87zQh/DEWjvGAMhYbXO+rROKRgQ2dDlpCMGGgi+E908TWnnVC+Fvza+KcOR5PC/Bw58BxThiC6l1bBD8z1n+5ELwsDN+1uMewJ4QvdgSeYTZifLQWvHKu2+6AFHq7Wk0YTXgLXp+5h8eT5strw/u3RQxPmlkp4UdtaPhTr1yAu4SfiYLcHRX4E0HuCksNKimAmWxI/ubE48BoW/sRHrVFjrsUICS4u+bJBzheES4q9PZYLdymANPmQv91Aw9iQcmi5PGx/nMXuMqJoTXK8HxEfq4SA1rxPLqMtj03ERhECnhztUfEsNecg8Ef23zTOXbZzJQqblsJf3Zkrie9xgNHPVXC+8rwhhB8bxoVhvfsbyX/BtOI9ZDigJnHi5ym64R/Or/E5fXGTAMW4Q06ubDd65OI63AvxkkzoX0OF/wgvgdlaEu4TANWSZnHcAxfshBgceBVR4u9W/E26REGOCCM/7iG10TbO5Pcu0PwlmXGBUgn4NlmblPsNdppnwjjO4vhS+ODZ1mvs5NtGWGYrZiqV05jncAXC9jfCXvXpfNAqqCBbe3Ch6N9Fyrjm1n1kySV5Sa9/ib6n2n40nDXmUkV5TYl0XqTMFpQUsYXrkFvVIG3dkhE/iPK+Gtm4JxKoxePOMSv2JErpwh5XGtJWdbgmpy+LttWibVAuH0lVxmnx4y7kj5O9gJIrcZW6hVmSYEfZ6yEz1m73fJ5a38o4cdZt96F8ZsVX29C8q/Nsrmrjc/iis3dqhBxXr96Dxu6xAJwLl0o/e8eOMJyCdr0sOed1XzoEEsXWn1iSpuT1Z6ZC0CoTZtN3WdWwiMZwh8KC71Xey6HuS9hfLrDT67FuF/k+qE7PeLSkHG308cQglAIXsr0ByCWTMWNKcJDrVz0+DuE+y04WhsmM/DlhhUW9nMbK/HKrcpJ6xiUIc3kpqxGEIZP4mZugA9EQd8lLjb/DxIqeRQSOj0MAAAAAElFTkSuQmCC"
-                  alt="external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo"
-                />
-              ),
-            },
-          ].map((tool) => (
-            <div
-              key={tool.name}
-              className="bg-gray-50 rounded-lg shadow p-3 flex items-center"
-            >
-              {tool.icon}
-              <span className="text-sm font-medium text-gray-700">
-                {tool.name}
-              </span>
+              ))}
             </div>
-          ))}
-        </div>
-        
-        {/* Experience Section */}
-        {/* <div className="mt-6 sm:mt-8 md:mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-center">
+
+            {/* Experience Section */}
+            {/* <div className="mt-6 sm:mt-8 md:mt-12 lg:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-center">
           <div className="p-3 sm:p-4 md:p-6 transform hover:scale-110 transition-all duration-500">
             <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-light text-gray-800 mb-2">
               5+
@@ -1120,240 +1140,244 @@ const Skills = () => {
             </div>
           </div>
         </div> */}
-      </div>
-      <div className="hidden md:block md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-          {[
-            {
-              name: "VS Code",
-              icon: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                  className="mr-2"
-                  style={{
-                    width: "clamp(2rem, 5vw, 3rem)",
-                    height: "clamp(2rem, 5vw, 3rem)",
-                    minWidth: "1.75rem",
-                    minHeight: "1.75rem",
-                    maxWidth: "3rem",
-                    maxHeight: "3rem",
-                    display: "block",
-                  }}
-                >
-                  <linearGradient
-                    id="vscode-gradient1-md"
-                    x1="37.8"
-                    x2="37.8"
-                    y1="43.37"
-                    y2="7.42"
-                    gradientUnits="userSpaceOnUse"
+          </div>
+          <div className="hidden md:block md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
+            {[
+              {
+                name: "VS Code",
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    className="mr-2"
+                    style={{
+                      width: "clamp(2rem, 5vw, 3rem)",
+                      height: "clamp(2rem, 5vw, 3rem)",
+                      minWidth: "1.75rem",
+                      minHeight: "1.75rem",
+                      maxWidth: "3rem",
+                      maxHeight: "3rem",
+                      display: "block",
+                    }}
                   >
-                    <stop offset="0" stopColor="#29b6f6" />
-                    <stop offset="1" stopColor="#13b2f6" />
-                  </linearGradient>
-                  <path
-                    fill="url(#vscode-gradient1-md)"
-                    d="M34.176,4.249c0.188,0.092,5.688,2.716,8.374,3.998C43.437,8.67,44,9.564,44,10.546v26.86 c0,0.981-0.559,1.874-1.443,2.299c-2.548,1.228-7.611,3.666-7.948,3.826C34.361,43.649,33.709,44,33.181,44 c-0.678,0-1.133-0.316-1.58-0.73L34,35.711V5.715l-2.254-1.135C32.228,4.109,32.896,4,33.291,4C33.653,4,33.948,4.138,34.176,4.249z"
+                    <linearGradient
+                      id="vscode-gradient1-md"
+                      x1="37.8"
+                      x2="37.8"
+                      y1="43.37"
+                      y2="7.42"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stopColor="#29b6f6" />
+                      <stop offset="1" stopColor="#13b2f6" />
+                    </linearGradient>
+                    <path
+                      fill="url(#vscode-gradient1-md)"
+                      d="M34.176,4.249c0.188,0.092,5.688,2.716,8.374,3.998C43.437,8.67,44,9.564,44,10.546v26.86 c0,0.981-0.559,1.874-1.443,2.299c-2.548,1.228-7.611,3.666-7.948,3.826C34.361,43.649,33.709,44,33.181,44 c-0.678,0-1.133-0.316-1.58-0.73L34,35.711V5.715l-2.254-1.135C32.228,4.109,32.896,4,33.291,4C33.653,4,33.948,4.138,34.176,4.249z"
+                    />
+                    <linearGradient
+                      id="vscode-gradient2-md"
+                      x1="6.085"
+                      x2="34.793"
+                      y1="34.801"
+                      y2="7.173"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset=".115" stopColor="#0076bb" />
+                      <stop offset=".257" stopColor="#0069b0" />
+                      <stop offset=".28" stopColor="#0069b0" />
+                      <stop offset=".424" stopColor="#0069b0" />
+                      <stop offset=".491" stopColor="#0072b7" />
+                      <stop offset=".577" stopColor="#0076bb" />
+                      <stop offset=".795" stopColor="#0076bb" />
+                      <stop offset="1" stopColor="#006eb9" />
+                    </linearGradient>
+                    <path
+                      fill="url(#vscode-gradient2-md)"
+                      d="M9,33.896l25-19.023V5.83c0-1.299-1.662-1.808-2.337-1.184 C31.008,5.25,4.658,29.239,4.658,29.239c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"
+                    />
+                    <path
+                      fill="#0288d1"
+                      d="M9,14.104l25,19.054v8.771c0,1.198-1.42,2.193-2.399,1.341L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
+                    />
+                  </svg>
+                ),
+              },
+              {
+                name: "Git",
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mr-2"
+                    viewBox="0 0 48 48"
+                    style={{
+                      width: "clamp(2rem, 5vw, 3rem)",
+                      height: "clamp(2rem, 5vw, 3rem)",
+                      minWidth: "1.75rem",
+                      minHeight: "1.75rem",
+                      maxWidth: "3rem",
+                      maxHeight: "3rem",
+                      display: "block",
+                    }}
+                  >
+                    <path
+                      fill="#F4511E"
+                      d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"
+                    ></path>
+                  </svg>
+                ),
+              },
+              {
+                name: "GitHub",
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mr-2"
+                    viewBox="0 0 72 72"
+                    style={{
+                      width: "clamp(2rem, 5vw, 3rem)",
+                      height: "clamp(2rem, 5vw, 3rem)",
+                      minWidth: "1.75rem",
+                      minHeight: "1.75rem",
+                      maxWidth: "3rem",
+                      maxHeight: "3rem",
+                      display: "block",
+                    }}
+                  >
+                    <path d="M 36 12 C 22.745 12 12 22.745 12 36 C 12 49.255 22.745 60 36 60 C 49.255 60 60 49.255 60 36 C 60 22.745 49.255 12 36 12 z M 36 20 C 44.837 20 52 27.163 52 36 C 52 43.284178 47.128298 49.420174 40.46875 51.355469 C 40.198559 51.103128 39.941627 50.74363 39.953125 50.285156 C 39.980125 49.233156 39.953125 46.778953 39.953125 45.876953 C 39.953125 44.328953 38.972656 43.230469 38.972656 43.230469 C 38.972656 43.230469 46.654297 43.316141 46.654297 35.119141 C 46.654297 31.957141 45.003906 30.310547 45.003906 30.310547 C 45.003906 30.310547 45.872125 26.933953 44.703125 25.501953 C 43.393125 25.359953 41.046922 26.753297 40.044922 27.404297 C 40.044922 27.404297 38.457406 26.753906 35.816406 26.753906 C 33.175406 26.753906 31.587891 27.404297 31.587891 27.404297 C 30.586891 26.753297 28.239687 25.360953 26.929688 25.501953 C 25.760688 26.933953 26.628906 30.310547 26.628906 30.310547 C 26.628906 30.310547 24.974609 31.956141 24.974609 35.119141 C 24.974609 43.316141 32.65625 43.230469 32.65625 43.230469 C 32.65625 43.230469 31.782197 44.226723 31.693359 45.652344 C 31.180078 45.833418 30.48023 46.048828 29.8125 46.048828 C 28.2025 46.048828 26.978297 44.483766 26.529297 43.759766 C 26.086297 43.045766 25.178031 42.447266 24.332031 42.447266 C 23.775031 42.447266 23.503906 42.726922 23.503906 43.044922 C 23.503906 43.362922 24.285781 43.585781 24.800781 44.175781 C 25.887781 45.420781 25.866281 48.21875 29.738281 48.21875 C 30.196553 48.21875 31.021102 48.11542 31.677734 48.025391 C 31.674106 48.90409 31.663893 49.74536 31.677734 50.285156 C 31.688158 50.700354 31.476914 51.032045 31.236328 51.279297 C 24.726159 49.25177 20 43.177886 20 36 C 20 27.163 27.163 20 36 20 z"></path>
+                  </svg>
+                ),
+              },
+              {
+                name: "Postman",
+                icon: (
+                  <img
+                    className="mr-2"
+                    style={{
+                      width: "clamp(2rem, 5vw, 3rem)",
+                      height: "clamp(2rem, 5vw, 3rem)",
+                      minWidth: "1.75rem",
+                      minHeight: "1.75rem",
+                      maxWidth: "3rem",
+                      maxHeight: "3rem",
+                      display: "block",
+                    }}
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE6UlEQVR4nNWaa2hcVRCAr9oKgo/6alUE0eKDqEl25uaB/oigiKIoqKGiqNDg7sxNYxsQLfojiCBtRasWQf0nKP6wiIj4KPjHSh9qVfzRICL+EtSWZO/MTbWadGXu3d3cPHazj7M3eODABrLnfHNmzrzOep6DMTOau0zJf1AIXhOGfUrwkzJOCeHfwnhKGY8p46QQfq6Mu5TwIRnrvdhbzVHkG8/XAMeV8WAZstTMFMI5ZTisBdwyvbVnXWbgUR4vFYY9Shg1C11bGDghhK/oyMCGjoGX8rhWCJ5RQnUFrosnYSSE20sTQ2ucwkserxPGbzsGzkvM64jt6QQ+JP+ejp4619IGhBLgvW3B2wUThtnM4Xn+oksAj7cEL4zUindxLgTjKSlgoUn43H2Jm1tdeK0KAbMh412NmU3Qd70ySJZwyrCjmMeN5ulm2O9Twv1L/xckHO27ZmVXyfhDpidMsC3NUGT/KiXYqYxfLiPE4bouVhifzdg0fi9NeKcvgGfYURoePkPYH6pxJ56qE2FxJlsB8IvK/tNb+q+swpN/f0gwWENjoVL3+mVOH/ZkajqJSfxSPUDCxyLy74zvIec26WjPLXUE370AvjgyeIEw/JUh/EElfF0Jj6a9i7nLiPH2+DPB23UEl6k8njfveQifyOrENcjdWjUZwheU4MN0xI1ZCN9qYL2xefMh+DoD+L1/BF1nxxrP48aKvZc87zQh/DEWjvGAMhYbXO+rROKRgQ2dDlpCMGGgi+E908TWnnVC+Fvza+KcOR5PC/Bw58BxThiC6l1bBD8z1n+5ELwsDN+1uMewJ4QvdgSeYTZifLQWvHKu2+6AFHq7Wk0YTXgLXp+5h8eT5strw/u3RQxPmlkp4UdtaPhTr1yAu4SfiYLcHRX4E0HuCksNKimAmWxI/ubE48BoW/sRHrVFjrsUICS4u+bJBzheES4q9PZYLdymANPmQv91Aw9iQcmi5PGx/nMXuMqJoTXK8HxEfq4SA1rxPLqMtj03ERhECnhztUfEsNecg8Ef23zTOXbZzJQqblsJf3Zkrie9xgNHPVXC+8rwhhB8bxoVhvfsbyX/BtOI9ZDigJnHi5ym64R/Or/E5fXGTAMW4Q06ubDd65OI63AvxkkzoX0OF/wgvgdlaEu4TANWSZnHcAxfshBgceBVR4u9W/E26REGOCCM/7iG10TbO5Pcu0PwlmXGBUgn4NlmblPsNdppnwjjO4vhS+ODZ1mvs5NtGWGYrZiqV05jncAXC9jfCXvXpfNAqqCBbe3Ch6N9Fyrjm1n1kySV5Sa9/ib6n2n40nDXmUkV5TYl0XqTMFpQUsYXrkFvVIG3dkhE/iPK+Gtm4JxKoxePOMSv2JErpwh5XGtJWdbgmpy+LttWibVAuH0lVxmnx4y7kj5O9gJIrcZW6hVmSYEfZ6yEz1m73fJ5a38o4cdZt96F8ZsVX29C8q/Nsrmrjc/iis3dqhBxXr96Dxu6xAJwLl0o/e8eOMJyCdr0sOed1XzoEEsXWn1iSpuT1Z6ZC0CoTZtN3WdWwiMZwh8KC71Xey6HuS9hfLrDT67FuF/k+qE7PeLSkHG308cQglAIXsr0ByCWTMWNKcJDrVz0+DuE+y04WhsmM/DlhhUW9nMbK/HKrcpJ6xiUIc3kpqxGEIZP4mZugA9EQd8lLjb/DxIqeRQSOj0MAAAAAElFTkSuQmCC"
+                    alt="external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo"
                   />
-                  <linearGradient
-                    id="vscode-gradient2-md"
-                    x1="6.085"
-                    x2="34.793"
-                    y1="34.801"
-                    y2="7.173"
-                    gradientUnits="userSpaceOnUse"
+                ),
+              },
+              {
+                name: "Figma",
+                icon: (
+                  <svg
+                    className="mr-2"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    style={{
+                      width: "clamp(2rem, 5vw, 3rem)",
+                      height: "clamp(2rem, 5vw, 3rem)",
+                      minWidth: "1.75rem",
+                      minHeight: "1.75rem",
+                      maxWidth: "3rem",
+                      maxHeight: "3rem",
+                      display: "block",
+                    }}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <stop offset=".115" stopColor="#0076bb" />
-                    <stop offset=".257" stopColor="#0069b0" />
-                    <stop offset=".28" stopColor="#0069b0" />
-                    <stop offset=".424" stopColor="#0069b0" />
-                    <stop offset=".491" stopColor="#0072b7" />
-                    <stop offset=".577" stopColor="#0076bb" />
-                    <stop offset=".795" stopColor="#0076bb" />
-                    <stop offset="1" stopColor="#006eb9" />
-                  </linearGradient>
-                  <path
-                    fill="url(#vscode-gradient2-md)"
-                    d="M9,33.896l25-19.023V5.83c0-1.299-1.662-1.808-2.337-1.184 C31.008,5.25,4.658,29.239,4.658,29.239c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574C7.304,34.37,8.271,34.43,9,33.896z"
-                  />
-                  <path
-                    fill="#0288d1"
-                    d="M9,14.104l25,19.054v8.771c0,1.198-1.42,2.193-2.399,1.341L4.658,18.761 c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
-                  />
-                </svg>
-              ),
-            },
-            {
-              name: "Git",
-              icon: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2"
-                  viewBox="0 0 48 48"
-                  style={{
-                    width: "clamp(2rem, 5vw, 3rem)",
-                    height: "clamp(2rem, 5vw, 3rem)",
-                    minWidth: "1.75rem",
-                    minHeight: "1.75rem",
-                    maxWidth: "3rem",
-                    maxHeight: "3rem",
-                    display: "block",
-                  }}
-                >
-                  <path
-                    fill="#F4511E"
-                    d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"
-                  ></path>
-                </svg>
-              ),
-            },
-            {
-              name: "GitHub",
-              icon: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2"
-                  viewBox="0 0 72 72"
-                  style={{
-                    width: "clamp(2rem, 5vw, 3rem)",
-                    height: "clamp(2rem, 5vw, 3rem)",
-                    minWidth: "1.75rem",
-                    minHeight: "1.75rem",
-                    maxWidth: "3rem",
-                    maxHeight: "3rem",
-                    display: "block",
-                  }}
-                >
-                  <path d="M 36 12 C 22.745 12 12 22.745 12 36 C 12 49.255 22.745 60 36 60 C 49.255 60 60 49.255 60 36 C 60 22.745 49.255 12 36 12 z M 36 20 C 44.837 20 52 27.163 52 36 C 52 43.284178 47.128298 49.420174 40.46875 51.355469 C 40.198559 51.103128 39.941627 50.74363 39.953125 50.285156 C 39.980125 49.233156 39.953125 46.778953 39.953125 45.876953 C 39.953125 44.328953 38.972656 43.230469 38.972656 43.230469 C 38.972656 43.230469 46.654297 43.316141 46.654297 35.119141 C 46.654297 31.957141 45.003906 30.310547 45.003906 30.310547 C 45.003906 30.310547 45.872125 26.933953 44.703125 25.501953 C 43.393125 25.359953 41.046922 26.753297 40.044922 27.404297 C 40.044922 27.404297 38.457406 26.753906 35.816406 26.753906 C 33.175406 26.753906 31.587891 27.404297 31.587891 27.404297 C 30.586891 26.753297 28.239687 25.360953 26.929688 25.501953 C 25.760688 26.933953 26.628906 30.310547 26.628906 30.310547 C 26.628906 30.310547 24.974609 31.956141 24.974609 35.119141 C 24.974609 43.316141 32.65625 43.230469 32.65625 43.230469 C 32.65625 43.230469 31.782197 44.226723 31.693359 45.652344 C 31.180078 45.833418 30.48023 46.048828 29.8125 46.048828 C 28.2025 46.048828 26.978297 44.483766 26.529297 43.759766 C 26.086297 43.045766 25.178031 42.447266 24.332031 42.447266 C 23.775031 42.447266 23.503906 42.726922 23.503906 43.044922 C 23.503906 43.362922 24.285781 43.585781 24.800781 44.175781 C 25.887781 45.420781 25.866281 48.21875 29.738281 48.21875 C 30.196553 48.21875 31.021102 48.11542 31.677734 48.025391 C 31.674106 48.90409 31.663893 49.74536 31.677734 50.285156 C 31.688158 50.700354 31.476914 51.032045 31.236328 51.279297 C 24.726159 49.25177 20 43.177886 20 36 C 20 27.163 27.163 20 36 20 z"></path>
-                </svg>
-              ),
-            },
-            {
-              name: "Postman",
-              icon: (
-                <img
-                  className="mr-2"
-                  style={{
-                    width: "clamp(2rem, 5vw, 3rem)",
-                    height: "clamp(2rem, 5vw, 3rem)",
-                    minWidth: "1.75rem",
-                    minHeight: "1.75rem",
-                    maxWidth: "3rem",
-                    maxHeight: "3rem",
-                    display: "block",
-                  }}
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE6UlEQVR4nNWaa2hcVRCAr9oKgo/6alUE0eKDqEl25uaB/oigiKIoqKGiqNDg7sxNYxsQLfojiCBtRasWQf0nKP6wiIj4KPjHSh9qVfzRICL+EtSWZO/MTbWadGXu3d3cPHazj7M3eODABrLnfHNmzrzOep6DMTOau0zJf1AIXhOGfUrwkzJOCeHfwnhKGY8p46QQfq6Mu5TwIRnrvdhbzVHkG8/XAMeV8WAZstTMFMI5ZTisBdwyvbVnXWbgUR4vFYY9Shg1C11bGDghhK/oyMCGjoGX8rhWCJ5RQnUFrosnYSSE20sTQ2ucwkserxPGbzsGzkvM64jt6QQ+JP+ejp4619IGhBLgvW3B2wUThtnM4Xn+oksAj7cEL4zUindxLgTjKSlgoUn43H2Jm1tdeK0KAbMh412NmU3Qd70ySJZwyrCjmMeN5ulm2O9Twv1L/xckHO27ZmVXyfhDpidMsC3NUGT/KiXYqYxfLiPE4bouVhifzdg0fi9NeKcvgGfYURoePkPYH6pxJ56qE2FxJlsB8IvK/tNb+q+swpN/f0gwWENjoVL3+mVOH/ZkajqJSfxSPUDCxyLy74zvIec26WjPLXUE370AvjgyeIEw/JUh/EElfF0Jj6a9i7nLiPH2+DPB23UEl6k8njfveQifyOrENcjdWjUZwheU4MN0xI1ZCN9qYL2xefMh+DoD+L1/BF1nxxrP48aKvZc87zQh/DEWjvGAMhYbXO+rROKRgQ2dDlpCMGGgi+E908TWnnVC+Fvza+KcOR5PC/Bw58BxThiC6l1bBD8z1n+5ELwsDN+1uMewJ4QvdgSeYTZifLQWvHKu2+6AFHq7Wk0YTXgLXp+5h8eT5strw/u3RQxPmlkp4UdtaPhTr1yAu4SfiYLcHRX4E0HuCksNKimAmWxI/ubE48BoW/sRHrVFjrsUICS4u+bJBzheES4q9PZYLdymANPmQv91Aw9iQcmi5PGx/nMXuMqJoTXK8HxEfq4SA1rxPLqMtj03ERhECnhztUfEsNecg8Ef23zTOXbZzJQqblsJf3Zkrie9xgNHPVXC+8rwhhB8bxoVhvfsbyX/BtOI9ZDigJnHi5ym64R/Or/E5fXGTAMW4Q06ubDd65OI63AvxkkzoX0OF/wgvgdlaEu4TANWSZnHcAxfshBgceBVR4u9W/E26REGOCCM/7iG10TbO5Pcu0PwlmXGBUgn4NlmblPsNdppnwjjO4vhS+ODZ1mvs5NtGWGYrZiqV05jncAXC9jfCXvXpfNAqqCBbe3Ch6N9Fyrjm1n1kySV5Sa9/ib6n2n40nDXmUkV5TYl0XqTMFpQUsYXrkFvVIG3dkhE/iPK+Gtm4JxKoxePOMSv2JErpwh5XGtJWdbgmpy+LttWibVAuH0lVxmnx4y7kj5O9gJIrcZW6hVmSYEfZ6yEz1m73fJ5a38o4cdZt96F8ZsVX29C8q/Nsrmrjc/iis3dqhBxXr96Dxu6xAJwLl0o/e8eOMJyCdr0sOed1XzoEEsXWn1iSpuT1Z6ZC0CoTZtN3WdWwiMZwh8KC71Xey6HuS9hfLrDT67FuF/k+qE7PeLSkHG308cQglAIXsr0ByCWTMWNKcJDrVz0+DuE+y04WhsmM/DlhhUW9nMbK/HKrcpJ6xiUIc3kpqxGEIZP4mZugA9EQd8lLjb/DxIqeRQSOj0MAAAAAElFTkSuQmCC"
-                  alt="external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo"
-                />
-              ),
-            },
-            {
-              name: "Figma",
-              icon: (
-                <svg
-                  className="mr-2"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  style={{
-                    width: "clamp(2rem, 5vw, 3rem)",
-                    height: "clamp(2rem, 5vw, 3rem)",
-                    minWidth: "1.75rem",
-                    minHeight: "1.75rem",
-                    maxWidth: "3rem",
-                    maxHeight: "3rem",
-                    display: "block",
-                  }}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <linearGradient
-                    id="figma1-md"
-                    x1="16.309"
-                    x2="23.023"
-                    y1="1.101"
-                    y2="19.546"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0" stopColor="#f44f5a"></stop>
-                    <stop offset=".443" stopColor="#ee3d4a"></stop>
-                    <stop offset="1" stopColor="#e52030"></stop>
-                  </linearGradient>
-                  <path
-                    fill="url(#figma1-md)"
-                    d="M26,17h-8c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h8V17z"
-                  ></path>
-                  <linearGradient
-                    id="figma2-md"
-                    x1="15.64"
-                    x2="22.314"
-                    y1="14.636"
-                    y2="32.971"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0" stopColor="#ae4cd5"></stop>
-                    <stop offset="1" stopColor="#9331bf"></stop>
-                  </linearGradient>
-                  <path
-                    fill="url(#figma2-md)"
-                    d="M25,31h-7c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7V31z"
-                  ></path>
-                  <linearGradient
-                    id="figma3-md"
-                    x1="14.81"
-                    x2="21.821"
-                    y1="26.357"
-                    y2="45.617"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0" stopColor="#33c481"></stop>
-                    <stop offset="1" stopColor="#21a366"></stop>
-                  </linearGradient>
-                  <path
-                    fill="url(#figma3-md)"
-                    d="M18,45L18,45c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7v7C25,41.866,21.866,45,18,45z"
-                  ></path>
-                  <linearGradient
-                    id="figma4-md"
-                    x1="27.498"
-                    x2="34.119"
-                    y1=".512"
-                    y2="18.702"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0" stopColor="#f09ca2"></stop>
-                    <stop offset="1" stopColor="#eb6773"></stop>
-                  </linearGradient>
-                  <path
-                    fill="url(#figma4-md)"
-                    d="M32,17h-7V3h7c3.866,0,7,3.134,7,7v0C39,13.866,35.866,17,32,17z"
-                  ></path>
-                  <linearGradient
-                    id="figma5-md"
-                    x1="28.714"
-                    x2="34.857"
-                    y1="14.972"
-                    y2="31.85"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0" stopColor="#32bdef"></stop>
-                    <stop offset="1" stopColor="#1ea2e4"></stop>
-                  </linearGradient>
-                  <circle cx="32" cy="24" r="7" fill="url(#figma5-md)"></circle>
-                </svg>
-              ),
-            },
-          ].map((tool) => (
-            <div key={tool.name} className="flex items-center mb-2">
-              {tool.icon}
-              <span className="text-base md:text-lg lg:text-xl font-medium text-gray-700">
-                {tool.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      
+                    <linearGradient
+                      id="figma1-md"
+                      x1="16.309"
+                      x2="23.023"
+                      y1="1.101"
+                      y2="19.546"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stopColor="#f44f5a"></stop>
+                      <stop offset=".443" stopColor="#ee3d4a"></stop>
+                      <stop offset="1" stopColor="#e52030"></stop>
+                    </linearGradient>
+                    <path
+                      fill="url(#figma1-md)"
+                      d="M26,17h-8c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h8V17z"
+                    ></path>
+                    <linearGradient
+                      id="figma2-md"
+                      x1="15.64"
+                      x2="22.314"
+                      y1="14.636"
+                      y2="32.971"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stopColor="#ae4cd5"></stop>
+                      <stop offset="1" stopColor="#9331bf"></stop>
+                    </linearGradient>
+                    <path
+                      fill="url(#figma2-md)"
+                      d="M25,31h-7c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7V31z"
+                    ></path>
+                    <linearGradient
+                      id="figma3-md"
+                      x1="14.81"
+                      x2="21.821"
+                      y1="26.357"
+                      y2="45.617"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stopColor="#33c481"></stop>
+                      <stop offset="1" stopColor="#21a366"></stop>
+                    </linearGradient>
+                    <path
+                      fill="url(#figma3-md)"
+                      d="M18,45L18,45c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h7v7C25,41.866,21.866,45,18,45z"
+                    ></path>
+                    <linearGradient
+                      id="figma4-md"
+                      x1="27.498"
+                      x2="34.119"
+                      y1=".512"
+                      y2="18.702"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stopColor="#f09ca2"></stop>
+                      <stop offset="1" stopColor="#eb6773"></stop>
+                    </linearGradient>
+                    <path
+                      fill="url(#figma4-md)"
+                      d="M32,17h-7V3h7c3.866,0,7,3.134,7,7v0C39,13.866,35.866,17,32,17z"
+                    ></path>
+                    <linearGradient
+                      id="figma5-md"
+                      x1="28.714"
+                      x2="34.857"
+                      y1="14.972"
+                      y2="31.85"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stopColor="#32bdef"></stop>
+                      <stop offset="1" stopColor="#1ea2e4"></stop>
+                    </linearGradient>
+                    <circle
+                      cx="32"
+                      cy="24"
+                      r="7"
+                      fill="url(#figma5-md)"
+                    ></circle>
+                  </svg>
+                ),
+              },
+            ].map((tool) => (
+              <div key={tool.name} className="flex items-center mb-2">
+                {tool.icon}
+                <span className="text-base md:text-lg lg:text-xl font-medium text-gray-700">
+                  {tool.name}
+                </span>
+              </div>
+            ))}
+          </div>
 
-      {/* Navigation */}
-      {/* <div className="fixed bottom-2 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 sm:gap-6 md:gap-12 lg:gap-16">
+          {/* Navigation */}
+          {/* <div className="fixed bottom-2 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 sm:gap-6 md:gap-12 lg:gap-16">
     <span className="text-xs sm:text-sm md:text-lg lg:text-xl font-light text-gray-500">
       About
     </span>
@@ -1361,8 +1385,8 @@ const Skills = () => {
       My Skills
     </span>
     </div> */}
-    </div>
-    </div>
+        </div>
+      </div>
     </div>
   );
 };

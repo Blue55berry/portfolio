@@ -10,8 +10,8 @@ const Navigation = ({ currentSection, setCurrentSection }: NavigationProps) => {
   const handleResumeClick = () => {
     // Start the resume PDF download
     const link = document.createElement("a");
-    link.href = "/pdf/Abi.Resume.pdf";
-    link.download = "Abi_Resume.pdf";
+    link.href = "/public/Abi Resume.pdf"; // Ensure this path is correct
+    link.download = "Abi Resume.pdf";
     document.body.appendChild(link);
     link.click();
 
