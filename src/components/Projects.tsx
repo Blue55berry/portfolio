@@ -29,17 +29,17 @@ const Projects = () => {
       image: "smart-recipe.png",
       // liveUrl: "#",
       githubUrl: "https://github.com/Blue55berry/Recipe-Generator.git",
-    },
-    {
+        },
+        {
       title: "Car Showroom Website",
       description:
         "Car showroom website with dynamic content and responsive design",
       tech: ["React", "Tailwind CSS", "Express"],
       image: "carshowroom.png",
-      // liveUrl: "#",
+      liveUrl: "https://car-showroom-0.web.app",
       githubUrl: "https://github.com/Blue55berry/anime-drive-experience.git",
-    },
-    {
+        },
+        {
       title: "Task Assignment System",
       description:
         "Task assignment and management system with real-time updates",

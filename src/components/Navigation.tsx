@@ -21,7 +21,6 @@ const Navigation = () => {
     { id: "/skills", label: "Skills", rotation: -90 },
     { id: "/projects", label: "Projects", rotation: -90 },
     { id: "/education", label: "Education", rotation: -90 },
-    { id: "resume", label: "Resume", rotation: -90, action: handleResumeClick },
   ];
 
   const [showSidebar, setShowSidebar] = React.useState(false);
@@ -76,24 +75,28 @@ const Navigation = () => {
             <Link
               to={item.id}
               key={item.id}
-              onClick={item.action}
-              className={`text-xs md:text-sm  mt-6  lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 ${
+              className={`text-xs md:text-sm  mt-6 lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 ${
                 location.pathname === item.id
                   ? "text-gray-800"
                   : "text-gray-400 hover:text-gray-600"
               }`}
               style={{ transform: `rotate(${item.rotation}deg)` }}
             >
-              {item.label === "Resume" && (
-                <Download className="w-3 h-3 md:w-4 md:h-4" />
-              )}
               {item.label}
             </Link>
           ))}
+          <div
+            onClick={handleResumeClick}
+            className={`text-xs md:text-sm  mt-6 lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer`}
+            style={{ transform: `rotate(-90deg)` }}
+          >
+            <Download className="w-3 h-3 md:w-4 md:h-4" />
+            Resume
+          </div>
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-col gap-2 md:-mb-3 md:mt-1 md:gap-3">
+        <div className="flex flex-col gap-2 md:gap-3">
           <a
             href="https://www.linkedin.com/in/abi-prasath-554a4727b/"
             target="_blank"
