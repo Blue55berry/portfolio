@@ -26,7 +26,7 @@ const Projects = () => {
       description:
         "smart recipe generator that suggests recipes based on available ingredients",
       tech: ["React", "Tailwind CSS", "Express", "Themealdb API", "MongoDB"],
-      image: "smart-recipe.png",
+      image: "recipe.png",
       // liveUrl: "#",
       githubUrl: "https://github.com/Blue55berry/Recipe-Generator.git",
         },
