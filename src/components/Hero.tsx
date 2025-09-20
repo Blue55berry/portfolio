@@ -1,30 +1,15 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import pees from "assets/peeps-avatar-alpha.png";
 import { Loader } from "lucide-react";
 import styled from "styled-components";
 
-interface HeroProps {
-  setCurrentSection: (section: string) => void;
-}
-
-const Hero = ({ setCurrentSection }: HeroProps) => {
+const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const handleCardClick = () => {
-    setCurrentSection("about");
-    if (heroRef.current) {
-      const elem = heroRef.current as HTMLElement & {
-        webkitRequestFullscreen?: () => void;
-        msRequestFullscreen?: () => void;
-      };
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();
-      }
-    }
+    navigate("/about");
   };
 
   return (
@@ -69,7 +54,7 @@ const Hero = ({ setCurrentSection }: HeroProps) => {
       <div
         className="fixed left-4 md:left-3 font-bold top-1/2 -translate-y-1/2 text-gray-600 text-sm sm:text-sm md:text-base lg:text-xl cursor-pointer hover:text-gray-400 transition-colors duration-200 z-20"
         style={{ writingMode: "vertical-rl", transform: "rotate(180deg) translateY(50%)" }}
-        onClick={() => setCurrentSection("education")}
+        onClick={() => navigate("/education")}
       >
         Educations
       </div>
@@ -80,7 +65,7 @@ const Hero = ({ setCurrentSection }: HeroProps) => {
         style={{ bottom: "6rem" }}
       >
         <button
-          onClick={() => setCurrentSection("skills")}
+          onClick={() => navigate("/skills")}
           className="text-md font-light sm:text-sm md:text-lg lg:text-xl text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-105"
           aria-label="Navigate to Skills section"
         >

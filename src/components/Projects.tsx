@@ -4,21 +4,55 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "Real-Time Chat Application",
+      description:
+        "Real-time chat application with user authentication and message history",
+      tech: ["React", "Tailwind CSS", "Express", "Websocket", "MongoDB"],
+      image: "whasapp.png",
+      // liveUrl: "#",
+      githubUrl: "https://github.com/Blue55berry/web-chat.git",
+    },
+    {
+      title: "Personal Finance Tracker",
+      description:
+        "Personal finance tracker with budgeting and expense categorization",
+      tech: ["React", "Tailwind CSS", "Express", "MongoDB"],
+      image: "finance.png",
+      // liveUrl: "#",
+      githubUrl: "https://github.com/Blue55berry/Finance-Tracker-System.git",
+    },
+    {
+      title: "Smart Recipe Generator",
+      description:
+        "smart recipe generator that suggests recipes based on available ingredients",
+      tech: ["React", "Tailwind CSS", "Express", "Themealdb API", "MongoDB"],
+      image: "smart-recipe.png",
+      // liveUrl: "#",
+      githubUrl: "https://github.com/Blue55berry/Recipe-Generator.git",
+    },
+    {
+      title: "Car Showroom Website",
+      description:
+        "Car showroom website with dynamic content and responsive design",
+      tech: ["React", "Tailwind CSS", "Express"],
+      image: "carshowroom.png",
+      // liveUrl: "#",
+      githubUrl: "https://github.com/Blue55berry/anime-drive-experience.git",
+    },
+    {
       title: "Task Assignment System",
       description:
         "Task assignment and management system with real-time updates",
-      tech: ["Html", "Tailwind CSS", "Php","Xampp Server", "PhpMyAdmin"],
-      image:
-        "Screenshot 2025-06-26 193729.png",
+      tech: ["Html", "Tailwind CSS", "Php", "Xampp Server", "PhpMyAdmin"],
+      image: "Screenshot 2025-06-26 193729.png",
       // liveUrl: "#",
       githubUrl: "https://github.com/Blue55berry/Task-assignment",
     },
     {
       title: "Apple Store",
       description: "Apple Store product showcase with interactive features",
-      tech: ["Html", "Tailwind CSS","JavaScript", "AOS Library"],
-      image:
-        "./Screenshot 2025-06-26 200543.png",
+      tech: ["Html", "Tailwind CSS", "JavaScript", "AOS Library"],
+      image: "./Screenshot 2025-06-26 200543.png",
       liveUrl: "https://blue55berry.github.io/apple-Store/",
       githubUrl: "https://github.com/Blue55berry/apple-Store",
     },
@@ -26,21 +60,18 @@ const Projects = () => {
       title: "Coffee Shop",
       description: "Coffee shop landing page with modern design",
       tech: ["Html", "Tailwind CSS", "3D model"],
-      image:
-        "./Screenshot 2025-06-26 200308.png",
+      image: "./Screenshot 2025-06-26 200308.png",
       liveUrl: "https://blue55berry.github.io/Coffee-Shop/",
       githubUrl: "https://github.com/Blue55berry/Coffee-Shop",
     },
     {
       title: "Movie Booking System",
       description: "Movie booking system with real-time updates",
-      tech: ["Html", "Tailwind CSS", "Php","Xampp Server", "PhpMyAdmin"],
-      image:
-        "./Screenshot 2025-06-26 195411.png",
+      tech: ["Html", "Tailwind CSS", "Php", "Xampp Server", "PhpMyAdmin"],
+      image: "./Screenshot 2025-06-26 195411.png",
       // liveUrl: "#",
       githubUrl: "https://github.com/Blue55berry/Movie-Booking",
     },
-    
   ];
 
   return (

@@ -1,45 +1,8 @@
 import React from "react";
-import Skills from "./Skills";
-import Educations from "./Educations";
 
 const About = () => {
-  // Scroll to section by id
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 lg:p-8">
-      {/* Navigation */}
-      <div className="fixed bottom-3 md:bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4 sm:gap-6 md:gap-12 lg:gap-16 z-50">
-        <button
-          className="text-xs sm:text-sm md:text-lg lg:text-xl font-light text-gray-900 border-b-2 border-gray-900 focus:outline-none"
-          onClick={() => scrollToSection("about")}
-          type="button"
-        >
-          About
-        </button>
-
-        
-        {/* <button
-          className="text-xs sm:text-sm md:text-lg lg:text-xl font-light text-gray-500 hover:text-gray-900 transition-colors border-b-2 border-transparent hover:border-gray-900 focus:outline-none"
-          onClick={() => scrollToSection("education")}
-          type="button"
-        >
-          Education
-        </button>
-        <button
-          className="text-xs sm:text-sm md:text-lg lg:text-xl font-light text-gray-500 hover:text-gray-900 transition-colors border-b-2 border-transparent hover:border-gray-900 focus:outline-none"
-          onClick={() => scrollToSection("skills")}
-          type="button"
-        >
-          My Skills
-        </button> */}
-      </div>
-
       {/* About Section */}
       <div id="about" className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center mt-16">
         {/* Text Section */}
@@ -50,7 +13,7 @@ const About = () => {
             I'm <span className="text-blue-400 sacramento-regular tracking-wider"> Abi!</span>
           </h1>
           <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed sacramento-regular">
-            I'm a Full Stack Developer passionate about building robust and user-friendly web applications. I focus on writing clean, maintainable code and optimizing performance across the stack—from front-end interfaces to back-end logic.
+            I'm a Full Stack Developer with a passion for building beautiful, functional, and user-centric web applications. I thrive on turning complex problems into elegant solutions and am always eager to learn new technologies. My goal is to create web experiences that are not only visually appealing but also highly performant and accessible.
           </p>
         </div>
 

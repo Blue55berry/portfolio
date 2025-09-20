@@ -1,12 +1,10 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Linkedin, Github, Download, Instagram, Mail } from "lucide-react";
 
-interface NavigationProps {
-  currentSection: string;
-  setCurrentSection: (section: string) => void;
-}
+const Navigation = () => {
+  const location = useLocation();
 
-const Navigation = ({ currentSection, setCurrentSection }: NavigationProps) => {
   const handleResumeClick = () => {
     // Start the resume PDF download
     const link = document.createElement("a");
@@ -14,19 +12,16 @@ const Navigation = ({ currentSection, setCurrentSection }: NavigationProps) => {
     link.download = "Abi Resume.pdf";
     document.body.appendChild(link);
     link.click();
-
     document.body.removeChild(link);
-    setCurrentSection("hero");
   };
 
   const navigationItems = [
-    { id: "hero", label: "Resume", rotation: -90, action: handleResumeClick },
-    {
-      id: "projects",
-      label: "Projects",
-      rotation: -90,
-      action: () => setCurrentSection("projects"),
-    },
+    { id: "/", label: "Home", rotation: -90 },
+    { id: "/about", label: "About", rotation: -90 },
+    { id: "/skills", label: "Skills", rotation: -90 },
+    { id: "/projects", label: "Projects", rotation: -90 },
+    { id: "/education", label: "Education", rotation: -90 },
+    { id: "resume", label: "Resume", rotation: -90, action: handleResumeClick },
   ];
 
   const [showSidebar, setShowSidebar] = React.useState(false);
@@ -78,11 +73,12 @@ const Navigation = ({ currentSection, setCurrentSection }: NavigationProps) => {
         {/* Navigation Items */}
         <div className="flex flex-col gap-6 md:gap-10 lg:gap-12 flex-1 justify-center items-center ">
           {navigationItems.map((item) => (
-            <button
+            <Link
+              to={item.id}
               key={item.id}
               onClick={item.action}
-              className={`text-xs md:text-sm  mt-6 lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 ${
-                currentSection === item.id
+              className={`text-xs md:text-sm  mt-6  lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 ${
+                location.pathname === item.id
                   ? "text-gray-800"
                   : "text-gray-400 hover:text-gray-600"
               }`}
@@ -92,12 +88,12 @@ const Navigation = ({ currentSection, setCurrentSection }: NavigationProps) => {
                 <Download className="w-3 h-3 md:w-4 md:h-4" />
               )}
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-col gap-2 md:gap-3">
+        <div className="flex flex-col gap-2 md:-mb-3 md:mt-1 md:gap-3">
           <a
             href="https://www.linkedin.com/in/abi-prasath-554a4727b/"
             target="_blank"
