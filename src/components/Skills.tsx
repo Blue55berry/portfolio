@@ -1,7 +1,7 @@
 import React from "react";
 
 const Skills = () => {
-  const skills = [
+  const frontendSkills = [
     { name: "HTML", level: 95 },
     { name: "CSS", level: 85 },
     { name: "JavaScript", level: 80 },
@@ -9,14 +9,20 @@ const Skills = () => {
     { name: "Tailwind CSS", level: 92 },
     { name: "React", level: 76 },
     { name: "TypeScript", level: 60 },
+  ];
+
+  const backendSkills = [
     { name: "Node.js", level: 85 },
     { name: "Express.js", level: 80 },
+    { name: "PHP", level: 80 },
+    { name: "XAMPP", level: 70 },
+  ];
+
+  const databaseSkills = [
     { name: "MongoDB", level: 80 },
     { name: "AWS", level: 75 },
     { name: "Firebase", level: 80 },
     { name: "PhpMyAdmin", level: 70 },
-    { name: "XAMPP", level: 70 },
-    { name: "PHP", level: 80 },
   ];
 
   // Helper to get icon for each skill
@@ -366,19 +372,7 @@ const Skills = () => {
           </h2>
           <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
             <div className="space-y-4">
-              {skills
-                .filter((skill) =>
-                  [
-                    "React",
-                    "TypeScript",
-                    "HTML",
-                    "CSS",
-                    "Bootstrap",
-                    "Tailwind CSS",
-                    "PHP",
-                    "JavaScript",
-                  ].includes(skill.name)
-                )
+              {frontendSkills
                 .map((skill, index) => {
                   let icon = getSkillIcon(skill.name);
                   if (skill.name === "HTML") {
@@ -552,18 +546,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-            {skills
-              .filter((skill) =>
-                [
-                  "React",
-                  "TypeScript",
-                  "HTML",
-                  "CSS",
-                  "Bootstrap",
-                  "Tailwind CSS",
-                  "PHP","JavaScript",
-                ].includes(skill.name)
-              )
+            {frontendSkills
               .map((skill, index) => {
                 let icon = getSkillIcon(skill.name);
                 if (skill.name === "HTML") {
@@ -781,10 +764,7 @@ const Skills = () => {
           </h2>
           <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
             <div className="space-y-4">
-              {skills
-                .filter((skill) =>
-                  ["Node.js", "Express.js", "XAMPP"].includes(skill.name)
-                )
+              {backendSkills
                 .map((skill, index) => {
                   let icon = getSkillIcon(skill.name);
                   if (skill.name === "Express.js") {
@@ -838,10 +818,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-            {skills
-              .filter((skill) =>
-                ["Node.js", "Express.js", "XAMPP"].includes(skill.name)
-              )
+            {backendSkills
               .map((skill, index) => {
                 let icon = getSkillIcon(skill.name);
                 if (skill.name === "Express.js") {
@@ -900,12 +877,7 @@ const Skills = () => {
           </h2>
           <div className="block md:hidden mx-2 sm:mx-4 md:mx-0 my-4 bg-gray-100 rounded-2xl p-3">
             <div className="space-y-4">
-              {skills
-                .filter((skill) =>
-                  ["MongoDB", "AWS", "Firebase", "PhpMyAdmin"].includes(
-                    skill.name
-                  )
-                )
+              {databaseSkills
                 .map((skill, index) => {
                   const icon = getSkillIcon(skill.name);
                   return (
@@ -937,12 +909,7 @@ const Skills = () => {
             </div>
           </div>
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 xl:gap-12 md:mx-8 md:my-6 lg:mx-16 lg:my-10 xl:mx-24 xl:my-14 md:p-6 lg:p-10 xl:p-14 bg-gray-50 rounded-2xl shadow-lg">
-            {skills
-              .filter((skill) =>
-                ["MongoDB", "AWS", "Firebase", "PhpMyAdmin"].includes(
-                  skill.name
-                )
-              )
+            {databaseSkills
               .map((skill, index) => (
                 <div
                   key={skill.name}

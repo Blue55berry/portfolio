@@ -5,7 +5,11 @@ import { Linkedin, Github, Download, Instagram, Mail } from "lucide-react";
 const Navigation = () => {
   const location = useLocation();
 
-  const handleResumeClick = () => {
+  const handleViewResume = () => {
+    window.open("/pdf/Abi Resume.pdf", "_blank");
+  };
+
+  const handleDownloadResume = () => {
     // Start the resume PDF download
     const link = document.createElement("a");
     link.href = "/pdf/Abi Resume.pdf"; // Ensure this path is correct
@@ -70,12 +74,12 @@ const Navigation = () => {
         }}
       >
         {/* Navigation Items */}
-        <div className="flex flex-col gap-6 md:gap-10 lg:gap-12 flex-1 justify-center items-center ">
+        <div className="flex flex-col gap-8 flex-1 justify-center items-center p-4 mt-4">
           {navigationItems.map((item) => (
             <Link
               to={item.id}
               key={item.id}
-              className={`text-xs md:text-sm  mt-6 lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 ${
+              className={`text-xs md:text-sm font-medium transition-all py-2 duration-300 hover:scale-110 flex items-center gap-1 ${
                 location.pathname === item.id
                   ? "text-gray-800"
                   : "text-gray-400 hover:text-gray-600"
@@ -86,17 +90,24 @@ const Navigation = () => {
             </Link>
           ))}
           <div
-            onClick={handleResumeClick}
+            className={`text-xs md:text-sm font-medium transition-all py-3 duration-300 hover:scale-110 flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer`}
+            style={{ transform: `rotate(-90deg)` }}
+          >
+            <Download className="w-3 h-3 md:w-4 md:h-4" />
+            View Resume
+          </div>
+          <div
+            onClick={handleDownloadResume}
             className={`text-xs md:text-sm  mt-6 lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer`}
             style={{ transform: `rotate(-90deg)` }}
           >
             <Download className="w-3 h-3 md:w-4 md:h-4" />
-            Resume
+            Download Resume
           </div>
         </div>
 
         {/* Social Icons */}
-        <div className="flex flex-col gap-2 md:gap-3">
+        <div className="flex flex-col gap-2 md:gap-3 mt-3">
           <a
             href="https://www.linkedin.com/in/abi-prasath-554a4727b/"
             target="_blank"
@@ -130,7 +141,7 @@ const Navigation = () => {
             <Mail className="w-3 h-3 md:w-5 md:h-5 text-gray-400 hover:text-red-600 cursor-pointer transition-all duration-300 hover:scale-110" />
           </a>
           {/* Vertical Line */}
-          <div className="w-px h-6 md:h-12 lg:h-16 bg-gray-500 mx-auto mt-2"></div>
+          <div className="w-px h-3 md:h-12 lg:h-16 bg-gray-500 mx-auto mt-2"></div>
         </div>
       </div>
     </>
