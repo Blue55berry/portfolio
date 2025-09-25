@@ -89,13 +89,16 @@ const Navigation = () => {
               {item.label}
             </Link>
           ))}
-          <div
-            className={`text-xs md:text-sm font-medium transition-all py-3 duration-300 hover:scale-110 flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer`}
+          <a
+            href="/pdf/Abi Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-xs md:text-sm font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer`}
             style={{ transform: `rotate(-90deg)` }}
           >
             <Download className="w-3 h-3 md:w-4 md:h-4" />
             View Resume
-          </div>
+          </a>
           <div
             onClick={handleDownloadResume}
             className={`text-xs md:text-sm  mt-6 lg:mt-3 font-medium transition-all duration-300 hover:scale-110 flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer`}
